@@ -1,132 +1,197 @@
-# أكد (Akked) — Personal Data & Consent Guardian
 
-> **"حارس البيانات الشخصية والموافقات" | "Personal Data & Consent Guardian"**
+أكّد (Akked)
+حارس البيانات الشخصية والموافقات | Personal Data & Consent Guardian
 
-A modern, responsive, bilingual (Arabic RTL / English LTR) web application and graduation project centered on the principle of **Minimum Necessary Disclosure (مبدأ الحد الأدنى من البيانات)**.
+نبذة عن المشروع
+«أكّد» هو مشروع تخرج يقدّم نموذجًا لمنصة ويب ثنائية اللغة تهدف إلى تمكين الأفراد من إثبات معلومة مطلوبة دون مشاركة وثائقهم وبياناتهم الشخصية كاملة. يعتمد المشروع على مبدأ الحد الأدنى من البيانات (Minimum Necessary Disclosure)، بحيث يحصل الطرف المستفيد على النتيجة التي يحتاج إليها فقط، ضمن غرض محدد ولمدة زمنية محددة، بينما تبقى التفاصيل الشخصية غير الضرورية محجوبة.
 
-Akked enables individuals to share only the minimum required data for a specific purpose, recipient, and duration through local client-side processing, automated PII redaction, tamper-evident SHA-256 cryptographic signatures, and dynamic watermarks.
+على سبيل المثال، عندما تحتاج جهة إلى التحقق من أهلية المستخدم لخدمة ما، لا يلزمها الاطلاع على جميع بيانات الهوية. تستطيع منصة «أكّد» إصدار إثبات يوضح أن المستخدم «مؤهل» أو «غير مؤهل» فقط، بدلًا من كشف الاسم ورقم الهوية وتاريخ الميلاد والعنوان. وبهذا تقل كمية البيانات المتداولة، وتنخفض مخاطر استخدامها خارج الغرض الذي جُمعت من أجله.
 
----
+تم تصميم المنصة كتطبيق ويب متجاوب يعمل على أجهزة الحاسب والهواتف، ويدعم العربية باتجاه من اليمين إلى اليسار والإنجليزية باتجاه من اليسار إلى اليمين.
 
-## 🔤 Typography & Font Availability Documentation
+المشكلة
+تتطلب كثير من الإجراءات الرقمية إثبات معلومة واحدة، لكن الطريقة المعتادة قد تفرض على المستخدم مشاركة مستند كامل يحتوي على بيانات تتجاوز الحاجة الفعلية للجهة المستفيدة. وقد يؤدي ذلك إلى عدد من المخاطر، منها:
 
-This project adheres strictly to accessible, non-decorative typography guidelines for all user interface elements, forms, buttons, long paragraphs, and small texts:
+كشف معلومات شخصية لا ترتبط بالغرض المطلوب.
 
-### 1. Font Hierarchy & Fallback Policy
+الاحتفاظ بنسخ من المستندات لدى جهات متعددة.
 
-| Category               | Primary Font             | Documented Fallbacks                                                      | Purpose & Usage                                                                       |
-| :--------------------- | :----------------------- | :------------------------------------------------------------------------ | :------------------------------------------------------------------------------------ |
-| **Arabic UI & Text**   | `IBM Plex Sans Arabic`   | **`Noto Kufi Arabic`**, `Tajawal`, `-apple-system`, `sans-serif`          | All buttons, forms, paragraphs, badges, tables, and modal dialogs in Arabic.          |
-| **English UI & Forms** | **`Inter`**              | `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `sans-serif` | Clean, non-decorative sans-serif for buttons, form inputs, table data, and body copy. |
-| **English Display**    | **`Cormorant Garamond`** | `Inter`, `sans-serif`                                                     | Editorial display headers and academic title text where appropriate.                  |
+صعوبة معرفة الجهة التي اطّلعت على البيانات ومدة صلاحية الوصول إليها.
 
-### 2. Strict Typographic Accessibility Rules
+إمكانية إعادة استخدام المستند لغرض آخر دون علم صاحبه.
 
-* **No Decorative Fonts for UI**: Decorative, cursive, or stylized display fonts are strictly prohibited on buttons, inputs, form fields, and long body paragraphs.
-* **No Didot on Small Text**: High-contrast serifs like Didot are explicitly excluded on small body text, labels, and captions to prevent stroke-thinning blurriness on high-DPI and mobile displays.
-* **Mobile Readability**: Base font size is set to `15px` with line-height of `1.65`. Captions and secondary labels maintain a minimum of `12.5px`–`13px` with font weight `600`+ to ensure total legibility across smartphone viewports.
+محدودية قدرة المستخدم على إلغاء المشاركة بعد إصدارها.
 
----
+الحل المقترح
+تعالج منصة «أكّد» هذه المشكلة من خلال إنشاء إثبات رقمي محدود يراعي أربعة عناصر رئيسية: المعلومة المطلوبة، والجهة المستفيدة، والغرض من الطلب، ومدة الصلاحية. تمر عملية المشاركة بمراحل واضحة تبدأ بإضافة المستند واختيار الغرض، ثم تحليل الحقول واكتشاف البيانات الشخصية غير الضرورية وحجبها، وتنتهي بإصدار إثبات قابل للتحقق دون إظهار البيانات المخفية.
 
-## ♿ Accessibility (WCAG 2.1 AA / AAA Compliance)
+يُضاف إلى الإثبات توقيع تشفيري باستخدام SHA-256 للمساعدة على كشف أي تعديل في المحتوى، إلى جانب علامة مائية ديناميكية مرتبطة بالجهة والغرض ومدة الصلاحية. كما يستطيع المستخدم متابعة مشاركاته وإلغاء النشط منها من خلال سجل موحد.
 
-* **Contrast Ratios**:
+أهداف المشروع
+تطبيق مبدأ الحد الأدنى من البيانات في عمليات الإثبات الرقمية.
 
-  * Deep Purple (`#5A1854`) on White (`#FFFFFF`): **10.9:1** *(Exceeds WCAG AAA requirement of 7:1)*.
-  * Body Text (`#1A1D2E`) on Light App Background (`#F8F9FD`): **14.5:1** *(Exceeds WCAG AAA)*.
-  * Secondary Slate (`#475569`) on White: **6.8:1** *(Exceeds WCAG AA requirement of 4.5:1)*.
-  * Emerald Text (`#0D825B` / `#065F46`) on Green Tint (`#E6F4EA`): **5.4:1** *(Exceeds WCAG AA)*.
-  * Dark Theme Text (`#F3F4F8`) on Surface (`#181B26`): **14.2:1** *(Exceeds WCAG AAA)*.
-* **Touch Targets**: All interactive buttons, tabs, dropdowns, and links maintain a minimum interactive touch target height of **44px** (with `min-height: 36px` on compact badges) with explicit `:focus-visible` outline rings for keyboard navigation.
-* **Bi-Directional Flow**:
+منح المستخدم تحكمًا أوضح في البيانات التي يشاركها والجهات التي تتلقاها.
 
-  * **Arabic (RTL)**: Native `dir="rtl"` with right-to-left layout order, start-aligned typography, and flipped chevron icons.
-  * **English (LTR)**: Native `dir="ltr"` with left-to-right flow.
+تقليل تداول النسخ الكاملة من الوثائق الشخصية.
 
----
+توفير وسيلة للتحقق من صحة الإثبات دون كشف الحقول المحجوبة.
 
-## 🚀 Key Application Features
+توثيق عمليات المشاركة وتواريخ انتهائها وحالات إلغائها.
 
-1. **Dashboard (لوحة التحكم)**:
+تقديم تجربة استخدام عربية وإنجليزية متجاوبة وسهلة الوصول.
 
-   * Real-time KPI counters (Active Shares, Expired Shares, Shielded PII Fields).
-   * Privacy Health Score gauge (94% protection rating).
-   * Recent activity audit timeline.
+آلية عمل المنصة
+تتكون عملية المشاركة الآمنة من ست مراحل:
 
-2. **6-Step Secure Share Wizard (معالج المشاركة الآمنة)**:
+إضافة المستند: يرفع المستخدم مستندًا من جهازه أو يختار نموذجًا تجريبيًا، مثل الهوية الوطنية أو شهادة الراتب أو فاتورة الضمان.
 
-   * **Step 1: Document Upload & Realistic Templates**: Supports local drag-and-drop or preloaded templates (Saudi National ID, Salary Certificate, Warranty Invoice).
-   * **Step 2: Recipient & Purpose Selection**: Targeted disclosure for Age 18+ Verification, Salary Threshold, or Warranty Verification.
-   * **Step 3: AI Minimization Analysis**: Detects sensitive PII and shields redundant fields.
-   * **Step 4: Interactive Before/After Preview**: Side-by-side comparison of full vs. protected document with selectable masks (Blackout, Blur, Pixelate, Tokenize).
-   * **Step 5: Safety Scan & Watermark**: Dynamic Privacy Score calculation, expiration duration (5 min to 30 days), and recipient-locked watermark.
-   * **Step 6: Issued Proof**: Generates verifiable proof card with Proof ID `DEMO-018`, QR code, and SHA-256 digest.
+تحديد الجهة والغرض: يختار المستخدم الجهة المستفيدة وسبب طلب البيانات، مثل التحقق من الأهلية أو تجاوز حد معين للراتب أو صلاحية الضمان.
 
-3. **Recipient Verification Portal (بوابة التحقق للجهات)**:
+تحليل البيانات: تحلل المنصة المستند وتحدد الحقول الشخصية والحساسة، ثم تميّز البيانات اللازمة عن البيانات الزائدة على الغرض.
 
-   * Recipient can input Proof ID (e.g. `DEMO-018`) to verify claims without accessing hidden personal identifiable information.
+مراجعة النتيجة: تعرض المنصة مقارنة بين المستند الأصلي والنسخة المحمية، مع إمكانية اختيار أسلوب الحجب، مثل التعتيم أو التمويه أو البكسلة أو الاستبدال برمز.
 
-4. **Shares Registry (سجل المشاركات)**:
+ضبط الحماية والصلاحية: يحدد المستخدم مدة صلاحية الإثبات، وتُضاف علامة مائية مرتبطة بالجهة المستفيدة، ثم يُعرض تقييم لمستوى حماية البيانات.
 
-   * Searchable, filterable table with 1-click **Instant Revoke** capability.
+إصدار الإثبات: تنشئ المنصة بطاقة إثبات تحتوي على رقم مرجعي ورمز QR وبصمة SHA-256، مع إظهار النتيجة المطلوبة فقط.
 
-5. **My Data Vault (خزنة بياناتي)**:
+الخصائص الرئيسية
+لوحة التحكم
+تعرض لوحة التحكم ملخصًا لحالة الخصوصية، وعدد المشاركات النشطة والمنتهية، وعدد الحقول الشخصية التي جرى حجبها، إضافة إلى سجل زمني لأحدث العمليات.
 
-   * Categorized exposure monitor with **Zero-Trace Purge** to wipe all local cache.
+معالج المشاركة الآمنة
+يوجه المستخدم خلال خطوات إنشاء الإثبات، بدءًا من المستند وحتى إصدار النتيجة النهائية. ويعرض كل خطوة بصورة مستقلة لتقليل الأخطاء وتوضيح البيانات التي ستظهر للجهة والبيانات التي ستبقى محجوبة.
 
-6. **Trusted Entities (الجهات الموثوقة)**:
+المعاينة قبل المشاركة
+تتيح المنصة مقارنة النسخة الأصلية بالنسخة المحمية قبل اعتماد العملية، حتى يتمكن المستخدم من التأكد من عدم ظهور أي معلومة غير ضرورية.
 
-   * Directory of organizations adhering to PDPL privacy guidelines.
+بوابة التحقق للجهات
+تستطيع الجهة المستفيدة إدخال رقم الإثبات، مثل DEMO-018، للتحقق من صلاحيته والنتيجة المرتبطة به دون الوصول إلى البيانات الشخصية المحجوبة.
 
-7. **Settings (الإعدادات)**:
+سجل المشاركات
+يوفر السجل قائمة قابلة للبحث والتصفية تتضمن المشاركات النشطة والمنتهية والملغاة، مع إمكانية إلغاء المشاركة النشطة فورًا.
 
-   * Strict Redaction Mode, Watermark density customizer, language & dark/light theme toggles.
+خزنة بياناتي
+تعرض الخزنة تصنيفًا للبيانات التي ظهرت في عمليات المشاركة، وتساعد المستخدم على متابعة مستوى التعرض. كما تتضمن خيارًا لمسح البيانات المؤقتة المخزنة محليًا على الجهاز.
 
----
+الجهات الموثوقة
+تضم المنصة دليلًا تجريبيًا للجهات التي تلتزم بممارسات حماية البيانات ومبادئ الخصوصية ذات الصلة.
 
-## 🛠️ How to Run Locally
+الإعدادات
+تشمل الإعدادات وضع الحجب الصارم، وكثافة العلامة المائية، واللغة، والمظهر الفاتح أو الداكن.
 
-1. Navigate to the project root:
+سيناريو استخدام
+إذا احتاج متجر إلكتروني إلى التحقق من أهلية مستخدم لخدمة مقيدة بشرط معين، يحدد المستخدم الغرض والجهة الطالبة داخل «أكّد». تحجب المنصة الاسم ورقم الهوية وتاريخ الميلاد وبقية الحقول غير اللازمة، ثم تصدر نتيجة مختصرة مثل «مؤهل» أو «غير مؤهل». تستلم الجهة هذه النتيجة فقط، ويمكنها التحقق من سلامة الإثبات وصلاحيته دون الاطلاع على الوثيقة الأصلية.
 
-   ```bash
-   cd /Users/atheer/.gemini/antigravity-ide/scratch/akked
-   ```
+الجانب التقني
+تم بناء المشروع كتطبيق ويب يعمل من خلال المتصفح، مع تنفيذ عمليات العرض والمعالجة التجريبية محليًا على جهاز المستخدم. ويرتكز التصميم الفني على العناصر التالية:
 
-2. Start the local server:
+المعالجة المحلية: تقليل الحاجة إلى إرسال المستندات إلى خدمات خارجية ضمن النموذج التجريبي.
 
-   ```bash
-   python3 -m http.server 8000
-   ```
+اكتشاف البيانات الشخصية: تحديد الحقول التي قد تحتوي على معلومات تعريف شخصية (PII).
 
-3. Open your browser at:
+تقليل البيانات: إبقاء الحقول المرتبطة بالغرض فقط وحجب بقية المعلومات.
 
-   ```
-   http://localhost:8000
-   ```
+أساليب الحجب: دعم التعتيم والتمويه والبكسلة والاستبدال برمز بحسب نوع المعاينة.
 
----
+البصمة التشفيرية: استخدام SHA-256 لإنشاء بصمة تساعد على اكتشاف التعديل في الإثبات.
 
-## 👥 Team Members | أعضاء الفريق
+العلامة المائية الديناميكية: ربط النسخة الناتجة بالجهة والغرض ومدة الصلاحية للحد من إعادة استخدامها.
 
-تم تطوير مشروع «أكّد» بواسطة:
+التحقق المستقل: تمكين الجهة من فحص حالة الإثبات بواسطة الرقم المرجعي أو رمز QR.
 
-* البندري ال الحارث
-* اثير الفرحان
-* غيداء الشمري
-* ساره الاسود
-* لين الملاقي
-* لمار المطيري
+التحكم في الصلاحية: دعم مدد تبدأ من خمس دقائق وتصل إلى ثلاثين يومًا بحسب سيناريو المشاركة.
 
----
+اللغات واتجاه الواجهة
+تدعم المنصة لغتين على مستوى الصفحات والعناصر التفاعلية:
 
-البرنامج التدريبي الذي نُفذ المشروع ضمنه: البرمجة التوليدية .
+العربية: اتجاه RTL ومحاذاة وتخطيط مناسبين للنص العربي.
 
-## 📄 Academic Project Documentation
+الإنجليزية: اتجاه LTR وتخطيط كامل باللغة الإنجليزية.
 
-For the complete graduation project thesis, IEEE 830 functional requirements, AI engine mechanics, and privacy architecture, see:
+عند تغيير اللغة، تتغير نصوص الصفحات والقوائم والأزرار والنماذج والرسائل والعناصر المرئية المرتبطة بالمحتوى، مع تحديث اتجاه الواجهة بما يتناسب مع اللغة المختارة.
 
-* [project_documentation.md](file:///Users/atheer/.gemini/antigravity-ide/scratch/akked/project_documentation.md)
+الخطوط
+الاستخدام	الخط الأساسي	الخطوط البديلة
+الواجهة والنصوص العربية	IBM Plex Sans Arabic	Noto Kufi Arabic، Tajawal، sans-serif
+الواجهة والنصوص الإنجليزية	Inter	Segoe UI، Roboto، sans-serif
+العناوين الإنجليزية البارزة	Cormorant Garamond	Inter، sans-serif
+تُستخدم خطوط واضحة وغير زخرفية في الأزرار وحقول الإدخال والفقرات والنصوص الصغيرة. يبلغ الحجم الأساسي للنص 15px بارتفاع سطر 1.65، ولا يقل حجم التعليقات والعناوين الثانوية عن 12.5px إلى 13px مع وزن مناسب للقراءة.
 
+سهولة الوصول
+رُوعي في تصميم الواجهة عدد من متطلبات سهولة الوصول وفق إرشادات WCAG 2.1، ومن أبرزها:
 
+توفير تباين واضح بين النصوص والخلفيات في الوضعين الفاتح والداكن.
 
+ألا يقل ارتفاع مناطق اللمس الرئيسية عن 44px.
+
+إظهار إطار واضح عند التنقل باستخدام لوحة المفاتيح من خلال focus-visible.
+
+استخدام اتجاه الصفحة الصحيح لكل لغة.
+
+عكس الأيقونات الاتجاهية، مثل الأسهم، عند الانتقال بين العربية والإنجليزية.
+
+المحافظة على وضوح النصوص في شاشات الهواتف والحاسب.
+
+ألوان الواجهة الأساسية تشمل البنفسجي الداكن #5A1854، وخلفية التطبيق الفاتحة #F8F9FD، ولون النص الأساسي #1A1D2E، والأخضر المستخدم في حالات النجاح والحماية #0D825B.
+
+متطلبات التشغيل
+متصفح حديث يدعم JavaScript.
+
+Python 3 لتشغيل خادم محلي بسيط.
+
+لا يتطلب النموذج التجريبي تثبيت قاعدة بيانات أو خادم خلفي.
+
+تشغيل المشروع محليًا
+بعد تنزيل المستودع، افتح الطرفية وانتقل إلى مجلد المشروع:
+
+cd akked
+شغّل خادمًا محليًا على المنفذ 8000:
+
+python3 -m http.server 8000
+ثم افتح الرابط التالي في المتصفح:
+
+http://localhost:8000
+طريقة الاستخدام
+افتح المنصة واختر العربية أو الإنجليزية.
+
+سجّل الدخول أو أنشئ حسابًا تجريبيًا.
+
+من لوحة التحكم، ابدأ طلب مشاركة جديدًا.
+
+أضف المستند أو اختر أحد النماذج المتاحة.
+
+حدد الجهة المستفيدة والغرض من الإثبات.
+
+راجع الحقول التي حددتها المنصة وتأكد من البيانات المحجوبة.
+
+اختر مدة الصلاحية واعتمد العلامة المائية.
+
+أصدر الإثبات وشاركه مع الجهة المطلوبة.
+
+تابع حالة الإثبات من سجل المشاركات، أو ألغِه عند الحاجة.
+
+التوثيق الفني
+يتضمن ملف project_documentation.md التوثيق التفصيلي للمشروع، بما في ذلك المتطلبات الوظيفية، وآلية عمل محرك تقليل البيانات، وهيكل الخصوصية، وسيناريوهات الاستخدام، وتفاصيل التحقق من الإثباتات.
+
+حدود النموذج الحالي
+هذا المشروع نموذج أولي تعليمي يوضح الفكرة وتجربة الاستخدام، وليس نظامًا إنتاجيًا معتمدًا لمعالجة وثائق رسمية. البيانات والنماذج وأرقام الإثبات المستخدمة في العرض تجريبية. ويتطلب استخدام الفكرة في بيئة حقيقية تكاملًا آمنًا مع مزودي الهوية والجهات المصرح لها، ومراجعة أمنية وقانونية شاملة، وبنية خلفية معتمدة لإدارة المفاتيح والسجلات والصلاحيات.
+
+البرنامج التدريبي
+نُفذ هذا المشروع ضمن البرنامج التدريبي: البرمجة التوليدية.
+
+حساب أكاديمية سدايا على GitHub: SDAIA Academy
+
+فريق العمل
+البندري ال الحارث
+
+اثير الفرحان
+
+غيداء الشمري
+
+ساره الاسود
+
+لين الملاقي
+
+لمار المطيري
 
