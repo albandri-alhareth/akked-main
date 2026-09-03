@@ -1,197 +1,415 @@
+# Akked (أكّد)
 
-أكّد (Akked)
-حارس البيانات الشخصية والموافقات | Personal Data & Consent Guardian
+**Personal Data & Consent Guardian | حارس البيانات الشخصية والموافقات**
 
-نبذة عن المشروع
-«أكّد» هو مشروع تخرج يقدّم نموذجًا لمنصة ويب ثنائية اللغة تهدف إلى تمكين الأفراد من إثبات معلومة مطلوبة دون مشاركة وثائقهم وبياناتهم الشخصية كاملة. يعتمد المشروع على مبدأ الحد الأدنى من البيانات (Minimum Necessary Disclosure)، بحيث يحصل الطرف المستفيد على النتيجة التي يحتاج إليها فقط، ضمن غرض محدد ولمدة زمنية محددة، بينما تبقى التفاصيل الشخصية غير الضرورية محجوبة.
+## Project Overview
 
-على سبيل المثال، عندما تحتاج جهة إلى التحقق من أهلية المستخدم لخدمة ما، لا يلزمها الاطلاع على جميع بيانات الهوية. تستطيع منصة «أكّد» إصدار إثبات يوضح أن المستخدم «مؤهل» أو «غير مؤهل» فقط، بدلًا من كشف الاسم ورقم الهوية وتاريخ الميلاد والعنوان. وبهذا تقل كمية البيانات المتداولة، وتنخفض مخاطر استخدامها خارج الغرض الذي جُمعت من أجله.
+Akked is a bilingual graduation project that presents a privacy-focused approach to digital verification. The platform allows individuals to prove a required fact without sharing an entire identity document or disclosing unrelated personal information.
 
-تم تصميم المنصة كتطبيق ويب متجاوب يعمل على أجهزة الحاسب والهواتف، ويدعم العربية باتجاه من اليمين إلى اليسار والإنجليزية باتجاه من اليسار إلى اليمين.
+The project is based on the principle of **Minimum Necessary Disclosure**. This means that the requesting organization receives only the specific result required for a defined purpose, while all unnecessary personal details remain protected.
 
-المشكلة
-تتطلب كثير من الإجراءات الرقمية إثبات معلومة واحدة، لكن الطريقة المعتادة قد تفرض على المستخدم مشاركة مستند كامل يحتوي على بيانات تتجاوز الحاجة الفعلية للجهة المستفيدة. وقد يؤدي ذلك إلى عدد من المخاطر، منها:
+For example, if an organization needs to verify whether a person is eligible for a service, it may receive only an “Eligible” or “Not Eligible” result. The user does not need to reveal their full name, national identification number, date of birth, address, or any other unrelated information.
 
-كشف معلومات شخصية لا ترتبط بالغرض المطلوب.
+Akked is designed as a responsive web application that works on desktop computers, laptops, tablets, and mobile phones. It provides a complete Arabic interface with right-to-left direction and a complete English interface with left-to-right direction.
 
-الاحتفاظ بنسخ من المستندات لدى جهات متعددة.
+## The Problem
 
-صعوبة معرفة الجهة التي اطّلعت على البيانات ومدة صلاحية الوصول إليها.
+Many digital services request complete documents even when only one piece of information needs to be verified. A user may be asked to upload a full identity document simply to confirm eligibility, age, salary range, or warranty status.
 
-إمكانية إعادة استخدام المستند لغرض آخر دون علم صاحبه.
+This approach may create several privacy and security concerns:
 
-محدودية قدرة المستخدم على إلغاء المشاركة بعد إصدارها.
+- Personal information unrelated to the requested service may be disclosed.
+- Copies of sensitive documents may be stored by several organizations.
+- Users may not know which organizations accessed their information.
+- Users may not know how long their documents will remain available.
+- Documents may be reused for purposes that were not originally approved.
+- Users may have limited control over cancelling or revoking an active disclosure.
+- Sharing complete documents increases the possible impact of unauthorized access or data leakage.
 
-الحل المقترح
-تعالج منصة «أكّد» هذه المشكلة من خلال إنشاء إثبات رقمي محدود يراعي أربعة عناصر رئيسية: المعلومة المطلوبة، والجهة المستفيدة، والغرض من الطلب، ومدة الصلاحية. تمر عملية المشاركة بمراحل واضحة تبدأ بإضافة المستند واختيار الغرض، ثم تحليل الحقول واكتشاف البيانات الشخصية غير الضرورية وحجبها، وتنتهي بإصدار إثبات قابل للتحقق دون إظهار البيانات المخفية.
+## Proposed Solution
 
-يُضاف إلى الإثبات توقيع تشفيري باستخدام SHA-256 للمساعدة على كشف أي تعديل في المحتوى، إلى جانب علامة مائية ديناميكية مرتبطة بالجهة والغرض ومدة الصلاحية. كما يستطيع المستخدم متابعة مشاركاته وإلغاء النشط منها من خلال سجل موحد.
+Akked provides a controlled method for creating a limited digital proof. Each proof is connected to four main elements:
 
-أهداف المشروع
-تطبيق مبدأ الحد الأدنى من البيانات في عمليات الإثبات الرقمية.
+- The specific information that needs to be verified.
+- The organization receiving the proof.
+- The stated purpose of the request.
+- The period during which the proof remains valid.
 
-منح المستخدم تحكمًا أوضح في البيانات التي يشاركها والجهات التي تتلقاها.
+The user selects a document and chooses the purpose of the verification. The platform identifies personal and sensitive fields, determines which information is necessary for the selected purpose, and conceals all unrelated data.
 
-تقليل تداول النسخ الكاملة من الوثائق الشخصية.
+Before issuing the proof, the user can compare the original document with the protected version. The final proof contains only the approved result and does not reveal the hidden information.
 
-توفير وسيلة للتحقق من صحة الإثبات دون كشف الحقول المحجوبة.
+A SHA-256 cryptographic digest is generated to help detect unauthorized changes to the proof. A dynamic watermark is also added and connected to the recipient, purpose, and validity period. Users can monitor their issued proofs and revoke active disclosures through a central registry.
 
-توثيق عمليات المشاركة وتواريخ انتهائها وحالات إلغائها.
+## Project Objectives
 
-تقديم تجربة استخدام عربية وإنجليزية متجاوبة وسهلة الوصول.
+The main objectives of Akked are:
 
-آلية عمل المنصة
-تتكون عملية المشاركة الآمنة من ست مراحل:
+- Applying the Minimum Necessary Disclosure principle to digital verification.
+- Giving individuals greater control over their personal information.
+- Reducing the circulation of complete identity documents.
+- Preventing unnecessary personal data from being disclosed.
+- Allowing organizations to verify a claim without accessing hidden information.
+- Connecting every disclosure to a specific recipient, purpose, and validity period.
+- Providing users with a clear record of active, expired, and revoked disclosures.
+- Supporting immediate revocation of active proofs.
+- Providing an accessible bilingual experience.
+- Delivering a responsive interface suitable for mobile and desktop devices.
 
-إضافة المستند: يرفع المستخدم مستندًا من جهازه أو يختار نموذجًا تجريبيًا، مثل الهوية الوطنية أو شهادة الراتب أو فاتورة الضمان.
+## How Akked Works
 
-تحديد الجهة والغرض: يختار المستخدم الجهة المستفيدة وسبب طلب البيانات، مثل التحقق من الأهلية أو تجاوز حد معين للراتب أو صلاحية الضمان.
+The secure sharing process consists of six main steps.
 
-تحليل البيانات: تحلل المنصة المستند وتحدد الحقول الشخصية والحساسة، ثم تميّز البيانات اللازمة عن البيانات الزائدة على الغرض.
+### Step 1: Document Upload
 
-مراجعة النتيجة: تعرض المنصة مقارنة بين المستند الأصلي والنسخة المحمية، مع إمكانية اختيار أسلوب الحجب، مثل التعتيم أو التمويه أو البكسلة أو الاستبدال برمز.
+The user uploads a document from their device or selects one of the available demonstration templates.
 
-ضبط الحماية والصلاحية: يحدد المستخدم مدة صلاحية الإثبات، وتُضاف علامة مائية مرتبطة بالجهة المستفيدة، ثم يُعرض تقييم لمستوى حماية البيانات.
+The available templates may include:
 
-إصدار الإثبات: تنشئ المنصة بطاقة إثبات تحتوي على رقم مرجعي ورمز QR وبصمة SHA-256، مع إظهار النتيجة المطلوبة فقط.
+- Saudi National ID.
+- Salary certificate.
+- Warranty invoice.
 
-الخصائص الرئيسية
-لوحة التحكم
-تعرض لوحة التحكم ملخصًا لحالة الخصوصية، وعدد المشاركات النشطة والمنتهية، وعدد الحقول الشخصية التي جرى حجبها، إضافة إلى سجل زمني لأحدث العمليات.
+Documents are used to demonstrate how unnecessary personal information can be detected and concealed.
 
-معالج المشاركة الآمنة
-يوجه المستخدم خلال خطوات إنشاء الإثبات، بدءًا من المستند وحتى إصدار النتيجة النهائية. ويعرض كل خطوة بصورة مستقلة لتقليل الأخطاء وتوضيح البيانات التي ستظهر للجهة والبيانات التي ستبقى محجوبة.
+### Step 2: Recipient and Purpose Selection
 
-المعاينة قبل المشاركة
-تتيح المنصة مقارنة النسخة الأصلية بالنسخة المحمية قبل اعتماد العملية، حتى يتمكن المستخدم من التأكد من عدم ظهور أي معلومة غير ضرورية.
+The user identifies the organization requesting the proof and selects the specific verification purpose.
 
-بوابة التحقق للجهات
-تستطيع الجهة المستفيدة إدخال رقم الإثبات، مثل DEMO-018، للتحقق من صلاحيته والنتيجة المرتبطة به دون الوصول إلى البيانات الشخصية المحجوبة.
+Possible purposes include:
 
-سجل المشاركات
-يوفر السجل قائمة قابلة للبحث والتصفية تتضمن المشاركات النشطة والمنتهية والملغاة، مع إمكانية إلغاء المشاركة النشطة فورًا.
+- Eligibility verification.
+- Salary-threshold verification.
+- Warranty verification.
 
-خزنة بياناتي
-تعرض الخزنة تصنيفًا للبيانات التي ظهرت في عمليات المشاركة، وتساعد المستخدم على متابعة مستوى التعرض. كما تتضمن خيارًا لمسح البيانات المؤقتة المخزنة محليًا على الجهاز.
+Connecting the proof to a specific purpose helps prevent it from being reused for a different request.
 
-الجهات الموثوقة
-تضم المنصة دليلًا تجريبيًا للجهات التي تلتزم بممارسات حماية البيانات ومبادئ الخصوصية ذات الصلة.
+### Step 3: Data Minimization Analysis
 
-الإعدادات
-تشمل الإعدادات وضع الحجب الصارم، وكثافة العلامة المائية، واللغة، والمظهر الفاتح أو الداكن.
+The platform analyzes the document and identifies fields that may contain personally identifiable information.
 
-سيناريو استخدام
-إذا احتاج متجر إلكتروني إلى التحقق من أهلية مستخدم لخدمة مقيدة بشرط معين، يحدد المستخدم الغرض والجهة الطالبة داخل «أكّد». تحجب المنصة الاسم ورقم الهوية وتاريخ الميلاد وبقية الحقول غير اللازمة، ثم تصدر نتيجة مختصرة مثل «مؤهل» أو «غير مؤهل». تستلم الجهة هذه النتيجة فقط، ويمكنها التحقق من سلامة الإثبات وصلاحيته دون الاطلاع على الوثيقة الأصلية.
+The system separates the fields required for the selected purpose from the fields that are not necessary. Unnecessary fields are marked for protection before the proof is issued.
 
-الجانب التقني
-تم بناء المشروع كتطبيق ويب يعمل من خلال المتصفح، مع تنفيذ عمليات العرض والمعالجة التجريبية محليًا على جهاز المستخدم. ويرتكز التصميم الفني على العناصر التالية:
+### Step 4: Before-and-After Review
 
-المعالجة المحلية: تقليل الحاجة إلى إرسال المستندات إلى خدمات خارجية ضمن النموذج التجريبي.
+The platform displays the original document and the protected version side by side.
 
-اكتشاف البيانات الشخصية: تحديد الحقول التي قد تحتوي على معلومات تعريف شخصية (PII).
+This allows the user to confirm which information will be shared and which information will remain concealed.
 
-تقليل البيانات: إبقاء الحقول المرتبطة بالغرض فقط وحجب بقية المعلومات.
+The available protection methods include:
 
-أساليب الحجب: دعم التعتيم والتمويه والبكسلة والاستبدال برمز بحسب نوع المعاينة.
+- Blackout.
+- Blur.
+- Pixelation.
+- Tokenization.
 
-البصمة التشفيرية: استخدام SHA-256 لإنشاء بصمة تساعد على اكتشاف التعديل في الإثبات.
+The user can review the protected output before approving the disclosure.
 
-العلامة المائية الديناميكية: ربط النسخة الناتجة بالجهة والغرض ومدة الصلاحية للحد من إعادة استخدامها.
+### Step 5: Protection and Validity Settings
 
-التحقق المستقل: تمكين الجهة من فحص حالة الإثبات بواسطة الرقم المرجعي أو رمز QR.
+The user selects the period during which the proof will remain valid.
 
-التحكم في الصلاحية: دعم مدد تبدأ من خمس دقائق وتصل إلى ثلاثين يومًا بحسب سيناريو المشاركة.
+The available periods may range from five minutes to thirty days, depending on the selected verification scenario.
 
-اللغات واتجاه الواجهة
-تدعم المنصة لغتين على مستوى الصفحات والعناصر التفاعلية:
+The platform also calculates a privacy score and adds a dynamic watermark connected to the intended recipient and purpose.
 
-العربية: اتجاه RTL ومحاذاة وتخطيط مناسبين للنص العربي.
+### Step 6: Proof Issuance
 
-الإنجليزية: اتجاه LTR وتخطيط كامل باللغة الإنجليزية.
+After the user approves the protected version, Akked issues a digital proof containing:
 
-عند تغيير اللغة، تتغير نصوص الصفحات والقوائم والأزرار والنماذج والرسائل والعناصر المرئية المرتبطة بالمحتوى، مع تحديث اتجاه الواجهة بما يتناسب مع اللغة المختارة.
+- The required verification result.
+- A unique proof reference number.
+- A QR code.
+- A SHA-256 cryptographic digest.
+- The recipient’s information.
+- The verification purpose.
+- The proof expiration time.
 
-الخطوط
-الاستخدام	الخط الأساسي	الخطوط البديلة
-الواجهة والنصوص العربية	IBM Plex Sans Arabic	Noto Kufi Arabic، Tajawal، sans-serif
-الواجهة والنصوص الإنجليزية	Inter	Segoe UI، Roboto، sans-serif
-العناوين الإنجليزية البارزة	Cormorant Garamond	Inter، sans-serif
-تُستخدم خطوط واضحة وغير زخرفية في الأزرار وحقول الإدخال والفقرات والنصوص الصغيرة. يبلغ الحجم الأساسي للنص 15px بارتفاع سطر 1.65، ولا يقل حجم التعليقات والعناوين الثانوية عن 12.5px إلى 13px مع وزن مناسب للقراءة.
+The proof does not display the concealed personal information.
 
-سهولة الوصول
-رُوعي في تصميم الواجهة عدد من متطلبات سهولة الوصول وفق إرشادات WCAG 2.1، ومن أبرزها:
+## Main Features
 
-توفير تباين واضح بين النصوص والخلفيات في الوضعين الفاتح والداكن.
+### Dashboard
 
-ألا يقل ارتفاع مناطق اللمس الرئيسية عن 44px.
+The dashboard provides a clear overview of the user’s privacy activity.
 
-إظهار إطار واضح عند التنقل باستخدام لوحة المفاتيح من خلال focus-visible.
+It includes:
 
-استخدام اتجاه الصفحة الصحيح لكل لغة.
+- Number of active disclosures.
+- Number of expired disclosures.
+- Number of protected personal-information fields.
+- Privacy Health Score.
+- Recent activity timeline.
+- Quick access to the secure sharing process.
 
-عكس الأيقونات الاتجاهية، مثل الأسهم، عند الانتقال بين العربية والإنجليزية.
+### Secure Share Wizard
 
-المحافظة على وضوح النصوص في شاشات الهواتف والحاسب.
+The Secure Share Wizard guides the user through the complete disclosure process.
 
-ألوان الواجهة الأساسية تشمل البنفسجي الداكن #5A1854، وخلفية التطبيق الفاتحة #F8F9FD، ولون النص الأساسي #1A1D2E، والأخضر المستخدم في حالات النجاح والحماية #0D825B.
+Each step is presented separately to make the process easier to understand and reduce the possibility of accidental data exposure.
 
-متطلبات التشغيل
-متصفح حديث يدعم JavaScript.
+The wizard explains:
 
-Python 3 لتشغيل خادم محلي بسيط.
+- What information is being requested.
+- Why the organization needs it.
+- What information will be shared.
+- What information will remain protected.
+- How long the proof will remain valid.
 
-لا يتطلب النموذج التجريبي تثبيت قاعدة بيانات أو خادم خلفي.
+### Before-and-After Preview
 
-تشغيل المشروع محليًا
-بعد تنزيل المستودع، افتح الطرفية وانتقل إلى مجلد المشروع:
+The preview feature allows users to compare the original document with the protected version before approving the proof.
 
+This step helps users ensure that no unnecessary personal information remains visible.
+
+### Recipient Verification Portal
+
+The Recipient Verification Portal allows organizations to verify issued proofs without accessing the concealed data.
+
+The recipient can enter a proof reference, such as `DEMO-018`, or scan the QR code to view:
+
+- Proof status.
+- Verification result.
+- Intended purpose.
+- Expiration status.
+- Cryptographic verification information.
+
+### Shares Registry
+
+The Shares Registry contains a searchable and filterable record of disclosures.
+
+Each record may show:
+
+- Recipient.
+- Purpose.
+- Creation date.
+- Expiration date.
+- Current status.
+- Revocation option.
+
+Proofs may appear as active, expired, or revoked. Active disclosures can be revoked directly from the registry.
+
+### My Data Vault
+
+My Data Vault provides an overview of personal-information categories detected during the demonstration.
+
+It helps users understand which types of information have appeared in their previous disclosures.
+
+The vault also includes a Zero-Trace Purge option that clears temporary data stored locally by the application.
+
+### Trusted Entities
+
+The Trusted Entities section provides a demonstration directory of organizations that follow relevant privacy and personal-data protection practices.
+
+This section is intended to help users identify the recipient and understand the purpose of each request.
+
+### Settings
+
+The Settings page allows users to configure:
+
+- Strict redaction mode.
+- Watermark density.
+- Interface language.
+- Light or dark theme.
+- Privacy preferences.
+- Local data controls.
+
+## Example Use Case
+
+Suppose an online service needs to confirm that a user meets a particular eligibility condition.
+
+Under the traditional approach, the user may be asked to upload a complete identity document. This document could reveal the user’s name, identification number, date of birth, photograph, address, and other information that is not required for the transaction.
+
+Using Akked, the user selects the requesting organization and the exact purpose of the verification. The platform analyzes the document and conceals all information that is not necessary.
+
+The final proof provides only an “Eligible” or “Not Eligible” result. The recipient can verify the proof and confirm its validity without viewing the user’s complete identity document.
+
+## Technical Approach
+
+Akked is implemented as a browser-based web application. The current demonstration performs its document presentation and processing locally on the user’s device.
+
+The technical design includes the following components.
+
+### Local Processing
+
+Document processing is performed locally within the demonstration environment. This reduces the need to transmit source documents to external services.
+
+### PII Detection
+
+The platform identifies fields that may contain personally identifiable information, including:
+
+- Full name.
+- National identification number.
+- Date of birth.
+- Address.
+- Contact information.
+- Financial details.
+- Document reference numbers.
+
+### Data Minimization
+
+The platform compares the information contained in the document with the selected verification purpose.
+
+Only the information required for that purpose is preserved. All unrelated fields are concealed before the proof is issued.
+
+### Redaction Methods
+
+Akked supports several methods for protecting personal information:
+
+- Blackout removes the visible content of a selected field.
+- Blur makes the field unreadable.
+- Pixelation hides the details using enlarged pixels.
+- Tokenization replaces the original value with a non-sensitive representation.
+
+### SHA-256 Cryptographic Digest
+
+A SHA-256 digest is generated for the issued proof.
+
+The digest helps detect whether the proof content has been modified after issuance. If the content changes, the generated digest will no longer match the original verification value.
+
+### Dynamic Watermarking
+
+A dynamic watermark is connected to:
+
+- The intended recipient.
+- The stated purpose.
+- The date of issuance.
+- The expiration period.
+
+This makes it more difficult to reuse the protected output for an unrelated transaction.
+
+### Independent Verification
+
+The recipient can verify the proof using its unique reference number or QR code.
+
+The verification process confirms the proof status and approved result without displaying the concealed personal information.
+
+### Expiration and Revocation
+
+Each proof has a defined validity period.
+
+The proof automatically becomes invalid after its expiration time. The user may also revoke an active proof before it expires.
+
+## Language and Layout Support
+
+Akked supports Arabic and English throughout the application.
+
+### Arabic Interface
+
+The Arabic interface uses:
+
+- Native right-to-left direction.
+- Right-aligned text.
+- Arabic navigation labels.
+- Arabic buttons, forms, messages, and validation text.
+- Arabic versions of visual and interactive content.
+
+### English Interface
+
+The English interface uses:
+
+- Native left-to-right direction.
+- Left-aligned text.
+- English navigation labels.
+- English buttons, forms, messages, and validation text.
+- English versions of visual and interactive content.
+
+When the language is changed, all visible content must change to the selected language. This includes:
+
+- Navigation menus.
+- Page headings.
+- Paragraphs.
+- Buttons.
+- Forms.
+- Input placeholders.
+- Validation messages.
+- Notifications.
+- Labels.
+- Interactive illustrations.
+- Text displayed inside visual elements.
+- Video titles and surrounding video content.
+
+Directional icons, arrows, and chevrons are also adjusted to match the selected reading direction.
+
+## Typography
+
+The Arabic interface uses `IBM Plex Sans Arabic` as the primary font.
+
+The Arabic fallback fonts are:
+
+- `Noto Kufi Arabic`
+- `Tajawal`
+- `-apple-system`
+- `sans-serif`
+
+The English interface uses `Inter` as the primary font for user-interface elements, forms, buttons, tables, and body text.
+
+The English fallback fonts are:
+
+- `-apple-system`
+- `BlinkMacSystemFont`
+- `Segoe UI`
+- `Roboto`
+- `sans-serif`
+
+`Cormorant Garamond` may be used for selected English display headings and academic titles. It is not used for buttons, form inputs, tables, captions, or long paragraphs.
+
+Decorative and cursive fonts are not used for functional interface elements. The base text size is `15px` with a line height of `1.65`. Captions and secondary labels remain between `12.5px` and `13px` with sufficient font weight for readability.
+
+## Accessibility
+
+The interface was designed with WCAG 2.1 accessibility guidance in mind.
+
+The accessibility considerations include:
+
+- Strong contrast between text and backgrounds.
+- Readable typography on desktop and mobile screens.
+- Primary interactive touch targets with a minimum height of `44px`.
+- Visible focus outlines for keyboard navigation.
+- Correct document direction for Arabic and English.
+- Mirrored directional icons when the interface direction changes.
+- Clear labels for buttons and form fields.
+- Responsive spacing across different screen sizes.
+- Interface elements that remain usable without relying only on color.
+
+The primary interface colors include:
+
+- Deep purple: `#5A1854`
+- Light application background: `#F8F9FD`
+- Primary body text: `#1A1D2E`
+- Secondary slate text: `#475569`
+- Emerald protection and success states: `#0D825B`
+- Dark-theme surface: `#181B26`
+- Dark-theme text: `#F3F4F8`
+
+## Responsive Design
+
+Akked is designed to work on mobile phones, tablets, laptops, and desktop computers.
+
+The responsive interface includes:
+
+- Flexible layouts that adapt to different screen widths.
+- Mobile-friendly buttons and form controls.
+- Navigation suitable for small and large screens.
+- Images and videos that remain within their containers.
+- Readable content without horizontal scrolling.
+- Stacked sections on mobile devices.
+- Wider multi-column layouts on laptop and desktop screens.
+- Consistent spacing and visual hierarchy across screen sizes.
+
+## System Requirements
+
+The demonstration version requires:
+
+- A modern web browser.
+- JavaScript enabled.
+- Python 3 for running a local development server.
+
+The current demonstration does not require a database or back-end server.
+
+## Running the Project Locally
+
+After downloading or cloning the repository, open a terminal and move to the project directory:
+
+```bash
 cd akked
-شغّل خادمًا محليًا على المنفذ 8000:
-
-python3 -m http.server 8000
-ثم افتح الرابط التالي في المتصفح:
-
-http://localhost:8000
-طريقة الاستخدام
-افتح المنصة واختر العربية أو الإنجليزية.
-
-سجّل الدخول أو أنشئ حسابًا تجريبيًا.
-
-من لوحة التحكم، ابدأ طلب مشاركة جديدًا.
-
-أضف المستند أو اختر أحد النماذج المتاحة.
-
-حدد الجهة المستفيدة والغرض من الإثبات.
-
-راجع الحقول التي حددتها المنصة وتأكد من البيانات المحجوبة.
-
-اختر مدة الصلاحية واعتمد العلامة المائية.
-
-أصدر الإثبات وشاركه مع الجهة المطلوبة.
-
-تابع حالة الإثبات من سجل المشاركات، أو ألغِه عند الحاجة.
-
-التوثيق الفني
-يتضمن ملف project_documentation.md التوثيق التفصيلي للمشروع، بما في ذلك المتطلبات الوظيفية، وآلية عمل محرك تقليل البيانات، وهيكل الخصوصية، وسيناريوهات الاستخدام، وتفاصيل التحقق من الإثباتات.
-
-حدود النموذج الحالي
-هذا المشروع نموذج أولي تعليمي يوضح الفكرة وتجربة الاستخدام، وليس نظامًا إنتاجيًا معتمدًا لمعالجة وثائق رسمية. البيانات والنماذج وأرقام الإثبات المستخدمة في العرض تجريبية. ويتطلب استخدام الفكرة في بيئة حقيقية تكاملًا آمنًا مع مزودي الهوية والجهات المصرح لها، ومراجعة أمنية وقانونية شاملة، وبنية خلفية معتمدة لإدارة المفاتيح والسجلات والصلاحيات.
-
-البرنامج التدريبي
-نُفذ هذا المشروع ضمن البرنامج التدريبي: البرمجة التوليدية.
-
-حساب أكاديمية سدايا على GitHub: SDAIA Academy
-
-فريق العمل
-البندري ال الحارث
-
-اثير الفرحان
-
-غيداء الشمري
-
-ساره الاسود
-
-لين الملاقي
-
-لمار المطيري
-
