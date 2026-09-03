@@ -413,3 +413,102 @@ After downloading or cloning the repository, open a terminal and move to the pro
 
 ```bash
 cd akked
+```
+
+Start a local server on port `8000`:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open the following address in your browser:
+
+```text
+http://localhost:8000
+```
+
+## How to Use the Application
+
+1. Open the Akked application.
+2. Select Arabic or English.
+3. Sign in or create a demonstration account.
+4. Open the dashboard.
+5. Start a new secure disclosure request.
+6. Upload a document or select one of the available templates.
+7. Select the requesting organization.
+8. Choose the exact verification purpose.
+9. Review the personal fields detected by the platform.
+10. Compare the original document with the protected version.
+11. Confirm that unnecessary information has been concealed.
+12. Select the proof validity period.
+13. Review the dynamic watermark and privacy score.
+14. Approve and issue the proof.
+15. Share the proof reference or QR code with the intended recipient.
+16. Monitor the proof through the Shares Registry.
+17. Revoke the proof when necessary.
+
+## Technical Documentation
+
+Detailed technical documentation is available in:
+
+[project_documentation.md](./project_documentation.md)
+
+The technical documentation covers:
+
+- Functional requirements.
+- User roles.
+- Main use cases.
+- Data-minimization process.
+- Privacy architecture.
+- Redaction methods.
+- Proof issuance.
+- Verification logic.
+- Language behavior.
+- Responsive design.
+- Security considerations.
+- Prototype limitations.
+
+## Current Prototype Limitations
+
+Akked is an educational prototype created to demonstrate the project concept, technical direction, and user experience.
+
+It is not a production system approved for processing official documents. All templates, user information, organizations, and proof references displayed in the application are intended for demonstration purposes.
+
+A production implementation would require:
+
+- Secure integration with authorized identity providers.
+- Approved integrations with participating organizations.
+- Secure back-end infrastructure.
+- Protected database storage.
+- Secure cryptographic key management.
+- Authentication and authorization controls.
+- Detailed audit logging.
+- Security and penetration testing.
+- Legal and regulatory review.
+- Operational monitoring.
+- Formal compliance assessment.
+
+## Privacy and Security Notice
+
+The prototype demonstrates privacy-enhancing concepts but should not be used to process real sensitive documents.
+
+Users should use only fictional or demonstration data when testing the application.
+
+The SHA-256 digest, QR code, redaction methods, and dynamic watermarks are included to demonstrate the intended architecture. They do not independently make the prototype suitable for production use.
+
+## Training Program
+
+This project was completed as part of the **Generative Programming (البرمجة التوليدية)** training program.
+
+SDAIA Academy GitHub account:
+
+[SDAIA Academy](https://github.com/SDAIAAcademy)
+
+## Team Members
+
+- البندري ال الحارث
+- اثير الفرحان
+- غيداء الشمري
+- ساره الاسود
+- لين الملاقي
+- لمار المطيري
