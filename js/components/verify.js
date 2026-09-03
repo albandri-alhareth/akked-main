@@ -36,9 +36,6 @@ window.AkkedVerify = {
             ${AkkedIcons.get('search', { size: 26 })}
           </div>
           <h1 style="font-size: 1.7rem; font-weight: 900; color: var(--brand-slate);">${I18N.t('verifyPortalTitle')}</h1>
-          <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 4px; max-width: 620px; margin-inline: auto;">
-            ${I18N.t('verifyPortalSubtitle')}
-          </p>
         </div>
 
         <!-- Input Box Card -->
@@ -143,21 +140,8 @@ window.AkkedVerify = {
             </div>
           </div>
 
-          <span class="badge ${isValid ? 'badge-active' : (isExpired ? 'badge-expired' : 'badge-revoked')}" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
-            ${isValid ? `
-              <picture style="display: inline-flex; line-height: 0;">
-                <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                <img class="single-pulse-badge" 
-                     src="assets/checkmark-verified-mint.png" 
-                     alt="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     title="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     aria-label="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     width="16" 
-                     height="16" 
-                     style="width: 16px; height: 16px; object-fit: contain; vertical-align: middle; display: inline-block;">
-              </picture>
-              <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
-            ` : (isExpired ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
+          <span class="badge ${isValid ? 'badge-active' : (isExpired ? 'badge-expired' : 'badge-revoked')}">
+            ${isValid ? (isAr ? 'مؤهل فقط' : 'Eligible only') : (isExpired ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
           </span>
         </div>
 
@@ -177,19 +161,8 @@ window.AkkedVerify = {
               </picture>
               <span>${I18N.t('disclosedDataOnly')}</span>
             </div>
-            <span class="badge badge-active" style="padding: 4px 10px; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 6px;">
-              <picture style="display: inline-flex; line-height: 0;">
-                <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                <img class="single-pulse-badge" 
-                     src="assets/checkmark-verified-mint.png" 
-                     alt="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     title="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     aria-label="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     width="13" 
-                     height="13" 
-                     style="width: 13px; height: 13px; object-fit: contain; vertical-align: middle; display: inline-block;">
-              </picture>
-              <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
+            <span class="badge badge-active">
+              ${isAr ? 'مؤهل فقط' : 'Eligible only'}
             </span>
           </div>
           <div style="font-size: 1.35rem; font-weight: 900; color: var(--brand-slate); margin-bottom: 8px;">

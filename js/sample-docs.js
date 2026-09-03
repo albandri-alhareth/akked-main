@@ -31,7 +31,7 @@ window.AkkedSampleDocs = [
           if (isShielded) {
             fieldsHtml += `
               <rect x="${f.x}" y="${f.y}" width="${f.w}" height="${f.h}" fill="#1E2238" rx="8" />
-              <text x="${f.x + f.w/2}" y="${f.y + f.h/2}" fill="#50BE9B" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="middle">محجوب للحماية</text>
+              <text x="${f.x + f.w/2}" y="${f.y + f.h/2}" fill="#50BE9B" font-size="13" font-weight="bold" text-anchor="middle" dominant-baseline="middle">${isArabic ? 'محجوب للحماية' : 'Hidden for Privacy'}</text>
             `;
           } else {
             fieldsHtml += `
@@ -55,14 +55,14 @@ window.AkkedSampleDocs = [
           const label = isArabic ? f.nameAr : f.nameEn;
           if (isShielded) {
             fieldsHtml += `
-              <text x="${f.x}" y="${f.y}" font-size="12" fill="#64748B" font-family="Tajawal, sans-serif">${label}:</text>
+              <text x="${f.x}" y="${f.y}" font-size="12" fill="#64748B" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${label}:</text>
               <rect x="${f.x}" y="${f.y + 4}" width="${f.w}" height="22" fill="#1E2238" rx="4" />
-              <text x="${f.x + 10}" y="${f.y + 19}" fill="#50BE9B" font-size="11" font-weight="bold" font-family="Tajawal, sans-serif">•••••••••••• (محمي)</text>
+              <text x="${f.x + 10}" y="${f.y + 19}" fill="#50BE9B" font-size="11" font-weight="bold" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? '•••••••••••• (محمي)' : '•••••••••••• (Protected)'}</text>
             `;
           } else {
             fieldsHtml += `
-              <text x="${f.x}" y="${f.y}" font-size="12" fill="#475569" font-family="Tajawal, sans-serif">${label}:</text>
-              <text x="${f.x}" y="${f.y + 20}" font-size="15" font-weight="bold" fill="#0F172A" font-family="Tajawal, sans-serif">${f.value}</text>
+              <text x="${f.x}" y="${f.y}" font-size="12" fill="#475569" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${label}:</text>
+              <text x="${f.x}" y="${f.y + 20}" font-size="15" font-weight="bold" fill="#0F172A" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${f.value}</text>
             `;
           }
         }
@@ -72,8 +72,8 @@ window.AkkedSampleDocs = [
       if (watermarkText) {
         watermarkSvg = `
           <g transform="rotate(-25 320 200)" opacity="0.16">
-            <text x="320" y="160" font-size="24" font-weight="900" fill="#5A1854" text-anchor="middle" font-family="Tajawal, sans-serif">${watermarkText}</text>
-            <text x="320" y="210" font-size="16" font-weight="bold" fill="#5E6A91" text-anchor="middle" font-family="Tajawal, sans-serif">صادر عبر منصة أكد للخصوصية - مؤقت</text>
+            <text x="320" y="160" font-size="24" font-weight="900" fill="#5A1854" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${watermarkText}</text>
+            <text x="320" y="210" font-size="16" font-weight="bold" fill="#5E6A91" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'صادر عبر منصة أكّد للخصوصية - مؤقت' : 'Issued via Akked Privacy Platform - Temporary'}</text>
           </g>
         `;
       }
@@ -126,14 +126,14 @@ window.AkkedSampleDocs = [
 
         if (isShielded) {
           fieldsHtml += `
-            <text x="${f.x}" y="${f.y}" font-size="11" fill="#64748B" font-family="Tajawal, sans-serif">${label}:</text>
+            <text x="${f.x}" y="${f.y}" font-size="11" fill="#64748B" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${label}:</text>
             <rect x="${f.x}" y="${f.y + 4}" width="${f.w}" height="22" fill="#1E2238" rx="4" />
-            <text x="${f.x + 8}" y="${f.y + 19}" fill="#50BE9B" font-size="11" font-weight="bold" font-family="Tajawal, sans-serif">غير مصرح بكشفه (محجوب)</text>
+            <text x="${f.x + 8}" y="${f.y + 19}" fill="#50BE9B" font-size="11" font-weight="bold" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'غير مصرح بكشفه (محجوب)' : 'Unauthorized disclosure (Redacted)'}</text>
           `;
         } else {
           fieldsHtml += `
-            <text x="${f.x}" y="${f.y}" font-size="11" fill="#475569" font-family="Tajawal, sans-serif">${label}:</text>
-            <text x="${f.x}" y="${f.y + 19}" font-size="14" font-weight="bold" fill="#0F172A" font-family="Tajawal, sans-serif">${f.value}</text>
+            <text x="${f.x}" y="${f.y}" font-size="11" fill="#475569" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${label}:</text>
+            <text x="${f.x}" y="${f.y + 19}" font-size="14" font-weight="bold" fill="#0F172A" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${f.value}</text>
           `;
         }
       });
@@ -142,8 +142,8 @@ window.AkkedSampleDocs = [
       if (watermarkText) {
         watermarkSvg = `
           <g transform="rotate(-25 320 210)" opacity="0.16">
-            <text x="320" y="190" font-size="24" font-weight="900" fill="#5A1854" text-anchor="middle" font-family="Tajawal, sans-serif">${watermarkText}</text>
-            <text x="320" y="235" font-size="16" font-weight="bold" fill="#5E6A91" text-anchor="middle" font-family="Tajawal, sans-serif">للتحقق من الملاءمة المالية فقط</text>
+            <text x="320" y="190" font-size="24" font-weight="900" fill="#5A1854" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${watermarkText}</text>
+            <text x="320" y="235" font-size="16" font-weight="bold" fill="#5E6A91" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'للتحقق من الملاءمة المالية فقط' : 'For financial eligibility check only'}</text>
           </g>
         `;
       }
@@ -153,13 +153,13 @@ window.AkkedSampleDocs = [
           <!-- Header -->
           <rect x="0" y="0" width="640" height="75" fill="#5E6A91" />
           <rect x="0" y="70" width="640" height="5" fill="#50BE9B" />
-          <text x="320" y="38" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" font-family="Tajawal, sans-serif">شهادة تعريف بالراتب والملاءمة المالية</text>
+          <text x="320" y="38" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'شهادة تعريف بالراتب والملاءمة المالية' : 'Salary Certificate & Financial Standing'}</text>
           <text x="320" y="58" font-size="12" fill="#E7E8EF" text-anchor="middle" font-family="Outfit, sans-serif">OFFICIAL SALARY CERTIFICATE</text>
 
           <!-- Company Stamp Simulation -->
           <circle cx="120" cy="200" r="55" fill="none" stroke="#5A1854" stroke-width="2" stroke-dasharray="6,4" opacity="0.4"/>
-          <text x="120" y="195" font-size="11" font-weight="bold" fill="#5A1854" text-anchor="middle" opacity="0.6">إدارة الموارد البشرية</text>
-          <text x="120" y="215" font-size="10" fill="#5A1854" text-anchor="middle" opacity="0.6">معتمد إلكترونياً</text>
+          <text x="120" y="195" font-size="11" font-weight="bold" fill="#5A1854" text-anchor="middle" opacity="0.6" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'إدارة الموارد البشرية' : 'Human Resources'}</text>
+          <text x="120" y="215" font-size="10" fill="#5A1854" text-anchor="middle" opacity="0.6" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'معتمد إلكترونياً' : 'Electronically Verified'}</text>
 
           ${fieldsHtml}
           ${watermarkSvg}
@@ -193,14 +193,14 @@ window.AkkedSampleDocs = [
 
         if (isShielded) {
           fieldsHtml += `
-            <text x="${f.x}" y="${f.y}" font-size="11" fill="#64748B" font-family="Tajawal, sans-serif">${label}:</text>
+            <text x="${f.x}" y="${f.y}" font-size="11" fill="#64748B" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${label}:</text>
             <rect x="${f.x}" y="${f.y + 4}" width="${f.w}" height="22" fill="#1E2238" rx="4" />
-            <text x="${f.x + 8}" y="${f.y + 19}" fill="#50BE9B" font-size="11" font-weight="bold" font-family="Tajawal, sans-serif">بيانات شخصية محجوبة</text>
+            <text x="${f.x + 8}" y="${f.y + 19}" fill="#50BE9B" font-size="11" font-weight="bold" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'بيانات شخصية محجوبة' : 'Personal Data Redacted'}</text>
           `;
         } else {
           fieldsHtml += `
-            <text x="${f.x}" y="${f.y}" font-size="11" fill="#475569" font-family="Tajawal, sans-serif">${label}:</text>
-            <text x="${f.x}" y="${f.y + 19}" font-size="14" font-weight="bold" fill="#0F172A" font-family="Tajawal, sans-serif">${f.value}</text>
+            <text x="${f.x}" y="${f.y}" font-size="11" fill="#475569" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${label}:</text>
+            <text x="${f.x}" y="${f.y + 19}" font-size="14" font-weight="bold" fill="#0F172A" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${f.value}</text>
           `;
         }
       });
@@ -209,8 +209,8 @@ window.AkkedSampleDocs = [
       if (watermarkText) {
         watermarkSvg = `
           <g transform="rotate(-25 320 190)" opacity="0.16">
-            <text x="320" y="170" font-size="22" font-weight="900" fill="#5A1854" text-anchor="middle" font-family="Tajawal, sans-serif">${watermarkText}</text>
-            <text x="320" y="210" font-size="15" font-weight="bold" fill="#5E6A91" text-anchor="middle" font-family="Tajawal, sans-serif">للتحقق من الضمان لدى مركز الصيانة</text>
+            <text x="320" y="170" font-size="22" font-weight="900" fill="#5A1854" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${watermarkText}</text>
+            <text x="320" y="210" font-size="15" font-weight="bold" fill="#5E6A91" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'للتحقق من الضمان لدى مركز الصيانة' : 'For warranty check at service center'}</text>
           </g>
         `;
       }
@@ -218,14 +218,14 @@ window.AkkedSampleDocs = [
       return `
         <svg viewBox="0 0 640 380" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background: #FFFFFF; border-radius: 16px; border: 2px solid #E2E8F0; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
           <rect x="0" y="0" width="640" height="70" fill="#1E293B" />
-          <text x="320" y="35" font-size="18" font-weight="900" fill="#50BE9B" text-anchor="middle" font-family="Tajawal, sans-serif">فاتورة شراء وبطاقة ضمان رسمي</text>
+          <text x="320" y="35" font-size="18" font-weight="900" fill="#50BE9B" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'فاتورة شراء وبطاقة ضمان رسمي' : 'Purchase Invoice & Warranty Card'}</text>
           <text x="320" y="55" font-size="11" fill="#94A3B8" text-anchor="middle" font-family="Outfit, sans-serif">PURCHASE INVOICE & OFFICIAL WARRANTY</text>
 
           <rect x="40" y="100" width="180" height="150" fill="#F8FAFC" rx="8" stroke="#CBD5E1"/>
           <rect x="95" y="125" width="70" height="42" rx="4" fill="none" stroke="#5E6A91" stroke-width="2.5"/>
           <line x1="85" y1="172" x2="175" y2="172" stroke="#5E6A91" stroke-width="3" stroke-linecap="round"/>
-          <text x="130" y="194" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle">جهاز إلكتروني معتمد</text>
-          <text x="130" y="214" font-size="11" fill="#50BE9B" text-anchor="middle">ضمان سنتين ساري</text>
+          <text x="130" y="194" font-size="12" font-weight="bold" fill="#475569" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'جهاز إلكتروني معتمد' : 'Verified Device'}</text>
+          <text x="130" y="214" font-size="11" fill="#50BE9B" text-anchor="middle" font-family="${isArabic ? 'Tajawal, sans-serif' : 'Inter, sans-serif'}">${isArabic ? 'ضمان سنتين ساري' : 'Valid 2-Year Warranty'}</text>
 
           ${fieldsHtml}
           ${watermarkSvg}

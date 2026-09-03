@@ -44,29 +44,15 @@ window.AkkedEntities = {
                     </div>
                   </div>
 
-                  <span class="badge badge-active" style="padding: 4px 10px; display: inline-flex; align-items: center; gap: 6px;">
-                    ${AkkedIcons.get('shield-check', { size: 13 })}
+                  <span class="badge badge-active">
                     <span>${ent.trustScore}% ${isAr ? 'موثوق' : 'Verified'}</span>
                   </span>
                 </div>
 
-                <div style="background-color: var(--brand-surface-subtle); border-radius: var(--radius-md); padding: 12px; border: 1px solid var(--border-light); font-size: 0.82rem; margin-bottom: 14px;">
-                  <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
-                    ${I18N.t('entityPermittedScopes')}:
-                  </div>
-                  <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                    ${ent.verifiedScopes.map(scope => `
-                      <span class="badge" style="background: var(--brand-surface-tint); color: var(--brand-slate); border: 1px solid var(--brand-slate-border);">
-                        ${scope.replace('_', ' ')}
-                      </span>
-                    `).join('')}
-                  </div>
-                </div>
 
                 <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: var(--text-muted);">
                   <span>${I18N.t('entityTotalShares')}: <strong>${ent.totalShares}</strong></span>
-                  <span style="color: var(--status-active); font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
-                    ${AkkedIcons.get('check', { size: 14, strokeWidth: 2.5 })}
+                  <span style="color: var(--status-active); font-weight: 700;">
                     <span>${isAr ? 'ممتثل لنظام حماية البيانات (PDPL)' : 'PDPL Compliant'}</span>
                   </span>
                 </div>

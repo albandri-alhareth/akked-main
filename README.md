@@ -1,5 +1,5 @@
 # أكد (Akked) — Personal Data & Consent Guardian
-> **"أثبت المطلوب، واحفظ الباقي" | "Prove what's needed, protect the rest"**
+> **"حارس البيانات الشخصية والموافقات" | "Personal Data & Consent Guardian"**
 
 A modern, responsive, bilingual (Arabic RTL / English LTR) web application and graduation project centered on the principle of **Minimum Necessary Disclosure (مبدأ الحد الأدنى من البيانات)**. 
 
@@ -81,7 +81,7 @@ This project adheres strictly to accessible, non-decorative typography guideline
    http://localhost:8000
    ```
 
----
+البرنامج التدريبي الذي نُفذ المشروع ضمنه: البرمجة التوليدية .
 
 ## 📄 Academic Project Documentation
 For the complete graduation project thesis, IEEE 830 functional requirements, AI engine mechanics, and privacy architecture, see:

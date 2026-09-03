@@ -45,7 +45,6 @@ window.AkkedShares = {
               </picture>
               <span>${I18N.t('sharesPageTitle')}</span>
             </h1>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">${I18N.t('sharesPageSubtitle')}</p>
           </div>
           <button class="btn btn-primary" onclick="AkkedApp.navigate('wizard')">
             <picture style="display: inline-flex; line-height: 0;">
@@ -176,14 +175,8 @@ window.AkkedShares = {
                       ${s.expiryDate}
                     </td>
                     <td>
-                      <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}" style="display: inline-flex; align-items: center; gap: 5px;">
-                        ${s.status === 'active' ? `
-                          <picture style="display: inline-flex; line-height: 0;">
-                            <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                            <img class="single-pulse-badge" src="assets/checkmark-verified-mint.png" alt="${isAr ? 'تم التحقق' : 'Verified'}" title="${isAr ? 'تم التحقق' : 'Verified'}" aria-label="${isAr ? 'تم التحقق' : 'Verified'}" width="12" height="12" style="width: 12px; height: 12px; object-fit: contain;">
-                          </picture>
-                          <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
-                        ` : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
+                      <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}">
+                        ${s.status === 'active' ? (isAr ? 'مؤهل فقط' : 'Eligible only') : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
                       </span>
                     </td>
                     <td>
@@ -227,14 +220,8 @@ window.AkkedShares = {
                     </picture>
                     <span>${isAr ? s.recipientNameAr : s.recipientNameEn}</span>
                   </div>
-                  <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}" style="display: inline-flex; align-items: center; gap: 4px;">
-                    ${s.status === 'active' ? `
-                      <picture style="display: inline-flex; line-height: 0;">
-                        <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                        <img class="single-pulse-badge" src="assets/checkmark-verified-mint.png" alt="${isAr ? 'تم التحقق' : 'Verified'}" width="12" height="12" style="width: 12px; height: 12px; object-fit: contain;">
-                      </picture>
-                      <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
-                    ` : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
+                  <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}">
+                    ${s.status === 'active' ? (isAr ? 'مؤهل فقط' : 'Eligible only') : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
                   </span>
                 </div>
 
@@ -405,21 +392,15 @@ window.AkkedShares = {
             <picture style="display: block; line-height: 0;">
               <source srcset="assets/akkid-logo.webp" type="image/webp">
               <img src="assets/akkid-logo.png" 
-                   alt="أكّد - أثبت المطلوب، واحفظ الباقي" 
-                   title="أكّد - أثبت المطلوب، واحفظ الباقي" 
+                   alt="أكّد" 
+                   title="أكّد" 
                    class="official-akkid-logo" 
                    width="64" 
                    height="88" 
                    style="width: 64px; height: auto; display: block; object-fit: contain;">
             </picture>
-            <span class="badge ${share.status === 'active' ? 'badge-active' : (share.status === 'expired' ? 'badge-expired' : 'badge-revoked')}" style="padding: 4px 10px; display: inline-flex; align-items: center; gap: 6px;">
-              ${share.status === 'active' ? `
-                <picture style="display: inline-flex; line-height: 0;">
-                  <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                  <img class="single-pulse-badge" src="assets/checkmark-verified-mint.png" alt="${isAr ? 'تم التحقق' : 'Verified'}" title="${isAr ? 'تم التحقق' : 'Verified'}" aria-label="${isAr ? 'تم التحقق' : 'Verified'}" width="14" height="14" style="width: 14px; height: 14px; object-fit: contain;">
-                </picture>
-                <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
-              ` : (share.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
+            <span class="badge ${share.status === 'active' ? 'badge-active' : (share.status === 'expired' ? 'badge-expired' : 'badge-revoked')}">
+              ${share.status === 'active' ? (isAr ? 'مؤهل فقط' : 'Eligible only') : (share.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
             </span>
           </div>
 

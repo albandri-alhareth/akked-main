@@ -1,13 +1,13 @@
 /**
  * Akked i18n (Internationalization) Dictionary
- * Complete Arabic (RTL) and English (LTR) translations
+ * Complete Arabic and English translations
  */
 
 const translations = {
   ar: {
     // Brand
     brandName: 'أكّد',
-    brandTagline: 'أثبت المطلوب، واحفظ الباقي',
+    brandTagline: 'حارس البيانات الشخصية والموافقات',
     brandSub: 'حارس البيانات الشخصية والموافقات',
     provenOnly: 'تم إثبات الأهلية',
     noExtraData: 'لم تتم مشاركة أي بيانات إضافية',
@@ -20,23 +20,28 @@ const translations = {
     navDashboard: 'لوحة التحكم',
     navShares: 'المشاركات والإثباتات',
     navTrustedEntities: 'الجهات الموثوقة',
-    navMyData: 'خزنة بياناتي',
+    navMyData: 'خزانة بياناتي',
     navAlerts: 'التنبيهات وسجل النشاط',
     navSettings: 'الإعدادات',
     navVerifyPortal: 'بوابة التحقق للجهات',
+    navLanding: 'الصفحة الرئيسية',
     createSecureShare: 'إنشاء مشاركة آمنة',
+    navLogout: 'تسجيل الخروج',
+    navLogin: 'تسجيل الدخول',
+    navRegister: 'إنشاء حساب جديد',
+    navEnterPlatform: 'الدخول إلى المنصة',
 
-    // Header & Global
     // Header & Global
     searchPlaceholder: 'بحث في المشاركات أو الجهات...',
     activeLanguage: 'العربية',
     switchTheme: 'تبديل المظهر',
+    themeLight: 'الوضع الفاتح',
+    themeDark: 'الوضع الداكن',
     
-    // Intro Section (Section 6)
+    // Intro Section
     introHeading: 'شارك المطلوب فقط، واحفظ بياناتك الأخرى',
-    introDesc: 'راجع ما ستشاركه قبل إصدار إثبات تجريبي محدود الغرض والمدة.',
-    btnCreateDemoProof: 'إنشاء إثبات تجريبي',
-    btnSeeHowItWorks: 'عرض آلية العمل',
+    btnCreateDemoProof: 'إنشاء إثبات',
+    btnCreateProof: 'إنشاء إثبات',
 
     // Dashboard Stats
     statActiveShares: 'المشاركات النشطة',
@@ -50,7 +55,6 @@ const translations = {
 
     // Shares Table
     sharesPageTitle: 'سجل المشاركات والإثباتات',
-    sharesPageSubtitle: 'تحكم كامل في كافة الوثائق والإثباتات التي قمت بمشاركتها مع إمكانية الإلغاء الفوري',
     filterAll: 'الكل',
     filterActive: 'نشط',
     filterExpired: 'منتهي',
@@ -89,7 +93,7 @@ const translations = {
     // Wizard Step 1
     uploadBoxTitle: 'اسحب وأفلت وثيقتك هنا، أو استعرض من جهازك',
     uploadBoxHint: 'يدعم صور (PNG, JPG) وملفات PDF. المعالجة تتم داخل متصفحك محلياً ولا نرفع المستند لخوادمنا.',
-    orChooseSample: 'أو اختر من النماذج التجريبية الجاهزة للفحص السريع:',
+    orChooseSample: 'أو اختر من النماذج الجاهزة للفحص السريع:',
     sampleNationalId: 'الهوية الوطنية السعودية',
     sampleSalaryCert: 'شهادة تعريف بالراتب',
     sampleRentalContract: 'عقد إيجار موثق',
@@ -101,9 +105,8 @@ const translations = {
     purposeAgeCheck: 'التحقق من الأهلية العمرية (فوق 18 عاماً)',
     purposeSalaryCheck: 'التحقق من الحد الأدنى للراتب وملاءمة الإيجار',
     purposeWarrantyCheck: 'التحقق من سريان الضمان والرقم التسلسلي',
-    recipientStore: 'متجر إلكتروني تجريبي',
-    recipientRealEstate: 'منصة العقار الذكي',
-    recipientCarRental: 'شركة التأجير الوطنية',
+    recipientStore: 'متجر إلكتروني',
+    recipientRealEstate: 'المنصة العقار',
     recipientServiceCenter: 'مركز صيانة الأجهزة المعتمد',
 
     // Wizard Step 3
@@ -151,7 +154,6 @@ const translations = {
 
     // Recipient Verification Portal
     verifyPortalTitle: 'بوابة التحقق الرسمية للمستلمين والجهات',
-    verifyPortalSubtitle: 'تحقق من صحة الإثباتات والوثائق المصدرة عبر منصة أكد دون الاطلاع على البيانات الحساسة المحجوبة',
     inputProofIdPlaceholder: 'أدخل رقم الإثبات (مثال: DEMO-018)...',
     btnCheckProof: 'التحقق من الإثبات',
     verifiedClaimTitle: 'نتيجة التحقق المعتمدة:',
@@ -169,14 +171,10 @@ const translations = {
     entitiesPageSubtitle: 'الجهات التي تدعم التحقق بالحد الأدنى من البيانات والامتثال لمعايير الخصوصية',
     entityTrustScore: 'مستوى التزام الخصوصية',
     entityTotalShares: 'مشاركات سابقة',
-    entityPermittedScopes: 'الأغراض المدعومة',
     btnQuickShareToEntity: 'إنشاء إثبات لهذه الجهة',
 
     // My Data Vault Page
     myDataPageTitle: 'خزنة بياناتي ورصد الانكشاف',
-    myDataPageSubtitle: 'استعراض فئات البيانات الشخصية ومستوى انكشافها عبر المشاركات النشطة مع ضمانات عدم التخزين الخارجي',
-    localVaultBadge: 'تخزين محلي مؤقت فقط (Zero-Knowledge)',
-    btnClearCache: 'مسح كافة الآثار والذاكرة المؤقتة (Zero-Trace Purge)',
     categoryIdentity: 'بيانات الهوية والميلاد',
     categoryFinancial: 'البيانات المالية والراتب',
     categoryResidency: 'العنوان وعقود السكن',
@@ -194,38 +192,265 @@ const translations = {
     alertTypeRevoked: 'تم إلغاء صلاحية',
     alertTypeSecurity: 'تحذير أمان أو محاولة دخول',
 
-    // Settings Page
-    settingsPageTitle: 'إعدادات المنصة والخصوصية',
-    settingsPageSubtitle: 'تخصيص تفضيلات التعتيم، اللغات، ومفاتيح التشفير الشخصية',
-    tabGeneral: 'عام واللغة',
-    tabPrivacy: 'سياسات الخصوصية والتقليص',
-    tabSecurity: 'الأمان والبصمات',
-    defaultDurationSetting: 'المدة الافتراضية لصلاحية الإثباتات:',
-    strictModeToggle: 'تفعيل نمط الحجب الفائق تلقائياً (Strict Masking)',
-    strictModeDesc: 'حجب كافة الحقول غير المذكورة صراحة في الغرض دون استثناء.',
-    watermarkDensitySetting: 'كثافة العلامة المائية على المستند:',
-    denseWatermark: 'علامة مائية قطبية مشددة',
-    mediumWatermark: 'علامة مائية متوسطة (موصى به)',
-    subtleWatermark: 'علامة مائية خفيفة',
-    btnSaveSettings: 'حفظ التفضيلات',
-    btnResetAll: 'إعادة ضبط المصنع ومسح البيانات',
+    // Redesigned Settings Page
+    settingsPageTitle: 'إعدادات المنصة والحساب',
+    settingsPageSubtitle: 'إدارة الملف الشخصي، تفضيلات الإشعارات، المظهر، وخيارات إمكانية الوصول والتسهيلات',
+    settingsProfileTab: 'الملف الشخصي والحساب',
+    settingsNotifTab: 'تفضيلات الإشعارات',
+    settingsThemeTab: 'المظهر واللغة',
+    settingsAccessTab: 'إمكانية الوصول (Accessibility)',
+    
+    // Settings - Profile Section
+    profileTitle: 'الملف الشخصي وحساب المستخدم',
+    profileSubtitle: 'معلومات الحساب ومعرف الخصوصية المشفر الخاص بك',
+    profileFullName: 'الاسم الكامل',
+    profileEmail: 'البريد الإلكتروني',
+    profilePhone: 'رقم الجوال',
+    profileRole: 'الدور / الصفة',
+    profilePrivacyId: 'معرف الخصوصية الفريد (Privacy Key ID)',
+    profileAccountStatus: 'حالة الحساب',
+    profileVerifiedStatus: 'حساب مفعل وموثق محلياً',
+    profileHardwareKey: 'بصمة المفتاح المشفر (WebCrypto SHA-256)',
+    btnSaveProfile: 'حفظ بيانات الملف الشخصي',
+
+    // Settings - Notification Preferences
+    notifTitle: 'تفضيلات الإشعارات والتنبيهات',
+    notifSubtitle: 'التحكم الدقيق في التنبيهات المباشرة والإشعارات الخارجية',
+    notifInAppAlerts: 'تنبيهات التحقق داخل التطبيق',
+    notifInAppAlertsDesc: 'استلام تنبيه فوري فور قيام أي جهة بالتحقق من أحد إثباتاتك النشطة.',
+    notifExpiryReminders: 'تذكيرات اقتراب انتهاء الصلاحية',
+    notifExpiryRemindersDesc: 'إرسال تنبيه قبل 30 دقيقة من انتهاء صلاحية أي مشاركة مفعلة.',
+    notifRevocationAlerts: 'إشعارات سحب وإلغاء الصلاحية',
+    notifRevocationAlertsDesc: 'تأكيد فوري عند إلغاء أو تعطيل أي إثبات رقمي.',
+    notifPushExternal: 'الإشعارات الخارجية وتنبيهات المتصفح',
+    notifPushExternalDesc: 'إرسال إشعارات خارجية عبر المتصفح لطلبات ومشاركات البيانات المهمة.',
+    notifWeeklyDigest: 'التقرير الدوري لمستوى الخصوصية',
+    notifWeeklyDigestDesc: 'ملخص أسبوعي بحالة الانكشاف والمشاركات النشطة والمنتهية.',
+
+    // Settings - Appearance & Theme
+    themeTitle: 'المظهر واللغة',
+    themeSubtitle: 'تخصيص نمط العرض البصري ولغة المنصة',
+    themeSelectionTitle: 'نمط المظهر (Theme):',
+    themeLightName: 'المظهر النهاري (Light)',
+    themeLightDesc: 'واجهة ناصعة بألوان مريحة وعالية التباين',
+    themeDarkName: 'المظهر الليلي (Dark)',
+    themeDarkDesc: 'واجهة داكنة مريحة للعين في الإضاءة الخافتة',
+    languageSelectionTitle: 'لغة الواجهة:',
+    languageSelectionDesc: 'التبديل الفوري بين اللغة العربية والإنجليزية مع تعديل اتجاه التنسيق بالكامل.',
+
+    // Settings - Accessibility Mode
+    accessTitle: 'نمط إمكانية الوصول والتسهيلات (Accessibility Mode)',
+    accessSubtitle: 'دعم قارئات الشاشة، التباين العالي، الإشعارات الخارجية، والإعلانات الصوتية المنطوقة',
+    accessMasterToggle: 'تفعيل نمط إمكانية الوصول الشامل',
+    accessMasterToggleDesc: 'تفعيل التباين المرتفع، دعم قراءة الشاشة، والتسهيلات الصوتية عند تصفح المنصة.',
+    accessAudioAnnouncements: 'الإعلانات الصوتية المنطوقة عند الدخول',
+    accessAudioAnnouncementsDesc: 'قراءة ملخص صوتي فوري لحالة المشاركات النشطة والتنبيهات المهمة بصوت ناطق عند فتح المنصة.',
+    accessExternalNotifs: 'الإشعارات الخارجية للطلبات الهامة',
+    accessExternalNotifsDesc: 'إرسال إشعار نظام خارجي فوري لأي طلب مشاركة بيانات عالي الأهمية.',
+    accessHighContrast: 'تعزيز التباين البصري والتركيز',
+    accessHighContrastDesc: 'إظهار حدود واضحة ومؤشرات تركيز عالية التباين للتنقل بلوحة المفاتيح.',
+    accessLargeText: 'تكبير خطوط القراءة',
+    accessLargeTextDesc: 'زيادة حجم النصوص بنسبة 15% لتحسين وضوح القراءة.',
+    btnTestSpeech: 'استمع للإعلان الصوتي الآن',
+    speechAnnouncementPlaying: 'جاري تشغيل الإعلان الصوتي...',
+    speechTestSample: 'مرحباً بك في منصة أكد. نمط إمكانية الوصول مفعّل. كافة معالجات البيانات تتم محلياً لحماية خصوصيتك.',
+
+    // Settings - Voice Assistant & Microphone Controls
+    accessMicVoiceAssistant: 'المساعد الصوتي التفاعلي والمايكروفون (Voice Assistant)',
+    accessMicVoiceAssistantDesc: 'تشغيل المايكروفون تلقائياً والاستماع للأوامر الصوتية للتحقق من طلبات البيانات ومراجعة الموافقات وتجديد الاشتراكات.',
+    btnLaunchVoiceAssistant: 'تشغيل المساعد الصوتي والمايك',
+    voiceAssistantTitle: 'مساعد أكد الصوتي الذكي (Akked Voice Guardian)',
+    voiceListeningPrompt: 'المايكروفون يستمع الآن... يمكنك الرد بصوتك: "نعم"، "لا"، "كرر"، أو "اشرح"',
+    voiceStatusListening: 'جاري الاستماع لصوتك عبر المايكروفون...',
+    voiceStatusSpeaking: 'المساعد يتحدث الآن...',
+    voiceStatusIdle: 'جاهز للاستماع',
+    voiceStatusProcessing: 'جاري معالجة الطلب ومراقبة الإجراءات...',
+
+    // Microphone Permission Modal
+    micPermissionTitle: 'طلب إذن تشغيل المايكروفون للتحكم الصوتي الشامل',
+    micPermissionDesc: 'لتمكين التحكم الصوتي الكامل في خصوصيتك ومراجعة طلبات البيانات بدون الحاجة لاستخدام الفأرة أو الأزرار، نحتاج إذن الوصول إلى المايكروفون.',
+    micPrivacyAssurance: 'ضمان الخصوصية: لا يتم تسجيل أو إرسال أي مقاطع صوتية لخوادم خارجية، وتتم كافة المعالجات محلياً في جهازك.',
+    btnAllowMic: 'السماح بتشغيل المايكروفون',
+    btnDenyMic: 'متابعة بدون مايك (الوضع البصري فقط)',
+    micPermissionGrantedBadge: 'إذن المايكروفون مفعل',
+    micPermissionDeniedBadge: 'المايكروفون متوقف (يتطلب إذناً)',
+
+    // Persistent Voice Accessibility Bar
+    barListeningNow: 'جاري الاستماع لصوتك عبر المايكروفون...',
+    barPaused: 'المايكروفون متوقف مؤقتاً',
+    btnPauseMic: 'إيقاف مؤقت',
+    btnResumeMic: 'استئناف الاستماع',
+    btnExitAccessibility: 'الخروج من نمط الوصول الشامل',
+    liveCaptionsTitle: 'النصوص التوضيحية المباشرة (Live Captions)',
+    scenarioSelectorLabel: 'اختبار سيناريوهات الطلبات الصوتية:',
+
+    scenarioAgeTitle: '1. طلب التحقق من العمر (متجر إلكتروني)',
+    scenarioSubscriptionTitle: '2. طلب تجديد اشتراك (ChatGPT)',
+    scenarioRentalTitle: '3. طلب أهلية الدخل (المنصة العقار)',
+
+    // Scenario 1: E-Commerce Age Verification
+    voiceAgePrompt: 'لديك طلب من متجر إلكتروني للتحقق من العمر. المطلوب مشاركة نتيجة أنك فوق 18 عاماً فقط. هل توافق؟',
+    voiceAgeConfirmSpeech: 'تم تأكيد موافقتك على مشاركة إثبات السن فقط، وجاري إصدار الإثبات المشفر.',
+    voiceAgeExplain: 'المستلم هو متجر إلكتروني معتمد. الغرض هو التحقق من السن القانوني فقط. البيانات المطلوبة هي نتيجة أنك فوق 18 عاماً دون كشف بطاقة الهوية أو الاسم أو العنوان. الصلاحية تنتهي بعد 15 دقيقة، ومستوى المخاطر منخفض جداً ومتوافق مع نظام حماية البيانات. هل توافق؟',
+
+    // Scenario 2: ChatGPT Subscription Renewal
+    voiceRenewalPrompt: 'يوجد لديك طلب تجديد اشتراك في ChatGPT بقيمة 75 ريال. هل ترغب في التجديد؟',
+    voiceRenewalConfirmSpeech: 'تم تسجيل موافقتك على طلب التجديد، وسأتابع حالة العملية.',
+    voiceRenewalExplain: 'المستلم هو موقع ChatGPT ومزود الخدمة OpenAI. الغرض هو تجديد الاشتراك الشهري بقيمة 75 ريال. البيانات المطلوبة: رمز تفويض مالي مشفر بحد أدنى دون كشف رقم بطاقتك الائتمانية. هل توافق على المتابعة؟',
+    chatGptService: 'موقع ChatGPT (OpenAI)',
+    renewalAmountLabel: 'قيمة الاشتراك:',
+    renewalAmountValue: '75.00 ريال سعودي / شهر',
+    renewalExpiryLabel: 'تاريخ التجديد المستهدف:',
+
+    // Scenario 3: Real Estate Platform Income Eligibility
+    voiceRentalPrompt: 'لديك طلب من المنصة العقار للتحقق من الأهلية. المطلوب إثبات نطاق الدخل المطلوب للتعاقد دون كشف كشف الحساب البنكي. هل توافق؟',
+    voiceRentalConfirmSpeech: 'تم تأكيد موافقتك على إثبات ملاءمة الدخل، وجاري إرسال الإثبات المشفر.',
+    voiceRentalExplain: 'المستلم هو المنصة العقار. الغرض: إثبات استيفاء الحد الأدنى للدخل للتعاقد العقاري. البيانات: نتيجة تطابق الدخل مع الفئة المطلوبة فقط دون كشف الراتب الدقيق أو كشف الحساب البنكي. هل توافق؟',
+
+    // Universal Conversational Responses
+    voicePromptReject: 'تم تسجيل رفضك للطلب وحجب الصلاحية فوراً.',
+    voiceMisunderstood: 'عذراً، لم أفهم ردك بدقة. يمكنك قول: هل عندي طلبات جديدة، أو اقرأ لي التنبيهات، أو وافق على الطلب، أو ارفض، أو اشرح أكثر.',
+    voiceTimeoutGentle: 'هل أنت بحاجة للمزيد من الوقت؟ يمكنك قول نعم للموافقة، أو لا للرفض، أو اشرح لمعرفة التفاصيل.',
+    voiceSensitivePrompt: 'تنبيه: هذا الإجراء يتضمن تفويضاً مالياً. هل تؤكد التنفيذ النهائي؟ قل نعم للمتابعة أو لا للتراجع.',
+    voiceHeardText: 'تم رصد صوتك:',
+    
+    // Quick Action Voice Commands
+    voiceCmdYes: 'نعم (Yes) [مفتاح 1]',
+    voiceCmdNo: 'لا (No) [مفتاح 2]',
+    voiceCmdExplain: 'اشرح التفاصيل (Explain) [مفتاح 3]',
+    voiceCmdRepeat: 'كرر الطلب (Repeat) [مفتاح 4]',
+
+    // Live Checkpoint Announcements & Stepper
+    monitoringTitle: 'المراقبة الحية لعملية التجديد المشفر',
+    monitoringSubtitle: 'تتبع مسار التفويض الآمن وتقليص بيانات الدفع حتى استلام التأكيد الرسمي',
+    monitoringStep1: '1. فحص أمان الاتصال وتشفير الهوية الرقمية',
+    monitoringStep1Desc: 'التحقق من شهادة SSL وبصمة التشفير الخاصة بموقع ChatGPT دون كشف الهوية الكاملة.',
+    monitoringStep2: '2. استخلاص رمز الدفع بالحد الأدنى (Zero-Exposure Token)',
+    monitoringStep2Desc: 'توليد تفويض مالي أحادي الاستخدام محجوب التفاصيل دون إرسال رقم البطاقة الائتمانية.',
+    monitoringStep3: '3. إصدار تفويض الأمان المعتمد للموقع',
+    monitoringStep3Desc: 'إرسال إشعار التجديد المصادق عليه وإغلاق قنوات الوصول الخارجية.',
+    monitoringStep4: '4. استلام التأكيد الرسمي وتوثيق العملية في سجل الأمان',
+    monitoringStep4Desc: 'تم استلام إشعار التأكيد من المزود وتمديد الاشتراك بنجاح.',
+    checkpoint1Announce: 'المرحلة الأولى: جاري فحص أمان الاتصال والتحقق المشفر من الهوية.',
+    checkpoint2Announce: 'المرحلة الثانية: جاري توليد تفويض مالي مشفر بحد أدنى.',
+    checkpoint3Announce: 'المرحلة الثالثة: جاري إرسال تفويض التجديد إلى مزود الخدمة.',
+    checkpoint4Announce: 'تم استلام التأكيد الرسمي من مزود الخدمة، واكتمل تجديد الاشتراك وتوثيقه بنجاح.',
+    monitoringStatusActive: 'جاري المراقبة الفورية والمتابعة حتى استلام التأكيد الرسمي...',
+    monitoringStatusComplete: 'تم استلام التأكيد الرسمي واكتملت الإجراءات بأمان تام',
+    monitoringHashLabel: 'بصمة المعاملة المشفرة:',
+    btnMinimizeVoice: 'تصغير المساعد',
+    btnCloseVoice: 'إغلاق نافذة المساعد',
+
+    // Landing Page
+    landingHeadline: 'منصة أكّد',
+    landingBtnLaunch: 'دخول لوحة التحكم — ابدأ الآن',
+    landingBtnVerify: 'بوابة التحقق للجهات',
+    
+    // Landing Page - Video Section
+    landingVideoTitle: 'شارك المطلوب فقط، واحفظ بياناتك الأخرى',
+    landingVideoSubtitle: 'تعرف على كيفية عمل منصة أكد لتقليص مشاركة الوثائق وحماية الهوية الشخصية',
+
+    // Landing Page - Use Cases
+    landingUseCasesTitle: 'حلول عملية للقطاعات اليومية',
+    landingUseCasesSubtitle: 'تكامل سريع يحقق الامتثال لمعايير الخصوصية في مختلف التعاملات',
+    useCase1Title: 'المتاجر والمنصات الإلكترونية',
+    useCase1Desc: 'التحقق من الأهلية العمرية للعميل دون طلب صورة بطاقة الهوية أو الاطلاع على السجل المدني.',
+    useCase2Title: 'التأجير والخدمات العقارية',
+    useCase2Desc: 'إثبات ملاءمة الراتب والوظيفة لعقد الإيجار دون كشف كشف الحساب البنكي أو رقم الآيبان.',
+    useCase3Title: 'تأجير السيارات والتنقل',
+    useCase3Desc: 'إثبات سريان رخصة القيادة والسن القانوني دون نسخ بطاقة الهوية وحفظ صورها.',
+    useCase4Title: 'مراكز الصيانة والضمان',
+    useCase4Desc: 'إثبات سريان الضمان والرقم التسلسلي للجهاز دون كشف السعر أو بيانات الفاتورة الشخصية.',
+
+    // Landing Page - CTA Banner & Footer
+    landingCtaTitle: 'ابدأ اليوم في حماية بياناتك ووثائقك الشخصية',
+    landingCtaDesc: 'انضم لمنصة أكد وجرّب الإفصاح الانتقائي الذكي بنقرة واحدة.',
+    landingFooterRights: 'جميع الحقوق محفوظة لمنصة أكد © 2026',
+    landingFooterTagline: 'منصة أكّد لحماية البيانات الشخصية.',
 
     // Toasts & Dialogs
     copiedToClipboard: 'تم نسخ الرابط إلى الحافظة بنجاح!',
     proofRevokedToast: 'تم إلغاء الإثبات بنجاح ولن يتمكن المستلم من التحقق منه بعد الآن.',
-    cacheClearedToast: 'تم مسح كافة البيانات المؤقتة والآثار من المتصفح بالكامل.',
-    settingsSavedToast: 'تم حفظ إعدادات الخصوصية بنجاح.',
+    settingsSavedToast: 'تم حفظ تفضيلات الإعدادات بنجاح.',
+    profileSavedToast: 'تم تحديث بيانات الملف الشخصي بنجاح.',
     confirmRevokeTitle: 'هل أنت متأكد من رغبتك في إلغاء هذا الإثبات؟',
     confirmRevokeDesc: 'بمجرد الإلغاء، سيتوقف رمز QR ورابط التحقق عن العمل فوراً ولن تتمكن الجهة من التحقق من صحته.',
     btnConfirmRevoke: 'نعم، قم بالإلغاء فوراً',
     btnCancel: 'تراجع',
-    legalDisclaimer: 'تنويه: هذا الإثبات هو إقرار خصوصية رقمي مشفر تم توليده بموافقة صاحب البيانات، ولا يدعي التوثيق الحكومي الرسمي ما لم يتوفر ربط مباشر بالجهة المصدرة.'
+
+    // Video Localization
+    videoSectionTitle: 'تعرّف على أكّد',
+    videoSectionDesc: 'شاهد كيف تحمي بياناتك وتشارك المطلوب فقط',
+    videoPlayLabel: 'تشغيل الفيديو',
+    videoReplayLabel: 'إعادة المشاهدة',
+    videoSlogan: 'أثبت المطلوب، واحفظ الباقي',
+
+    // Interactive Character Illustration inside Device Screen
+    charTitle: 'التحقق من بيانات الهوية',
+    charSubheading: 'البيانات الإضافية',
+    charResult: 'مؤهل فقط',
+
+    // Hero Section
+    heroTitle: 'أثبت المطلوب، واحفظ الباقي',
+    heroSubtitle: 'شارك المطلوب فقط، دون كشف بياناتك الأخرى',
+
+    // Three-Phone Process Graphic
+    howItWorksTitle: 'كيف تعمل أكّد؟',
+    howItWorksSubtitle: 'ثلاث خطوات بسيطة لإثبات المطلوب دون مشاركة بياناتك الكاملة',
+    howItWorksBtn: 'الدخول إلى المنصة',
+
+    // Login Page
+    loginTitle: 'تسجيل الدخول',
+    loginSubtitle: 'الوصول الآمن لحسابك ولوحة التحكم في منصة أكّد',
+    loginIdentifier: 'البريد الإلكتروني أو رقم الجوال',
+    loginIdentifierPlaceholder: 'اكتب بريدك أو رقمك',
+    loginPassword: 'كلمة المرور',
+    loginForgot: 'نسيت كلمة المرور؟',
+    loginBtn: 'تسجيل الدخول',
+    loginNoAccount: 'ليس لديك حساب؟',
+    loginCreateAccount: 'إنشاء حساب جديد',
+    loginNafathBadge: 'التحقق عبر النفاذ الوطني الموحد قريباً',
+    loginErrIdentifier: 'يرجى إدخال البريد الإلكتروني أو رقم الجوال',
+    loginErrPassword: 'يرجى إدخال كلمة المرور',
+    loginSuccessToast: 'تم تسجيل الدخول بنجاح. مرحباً بك في لوحة التحكم',
+    loginShowPassword: 'إظهار كلمة المرور',
+    loginHidePassword: 'إخفاء كلمة المرور',
+    loginForgotTitle: 'استعادة كلمة المرور',
+    loginForgotBody: 'سيتم توفير خدمة استعادة كلمة المرور قريبًا.',
+    loginBackHome: 'العودة إلى الصفحة الرئيسية',
+
+    // Registration Page
+    regTitle: 'إنشاء حساب جديد',
+    regSubtitle: 'انضم إلى منصة أكّد لحماية بياناتك ومشاركتها بأمان وسيادة تامة',
+    regName: 'الاسم الكامل',
+    regNamePlaceholder: 'اكتب اسمك الكامل',
+    regIdentifier: 'البريد الإلكتروني أو رقم الجوال',
+    regIdentifierPlaceholder: 'اكتب بريدك أو رقمك',
+    regPassword: 'كلمة المرور',
+    regPasswordConfirm: 'تأكيد كلمة المرور',
+    regSubmit: 'إنشاء حساب جديد',
+    regHaveAccount: 'لديك حساب بالفعل؟',
+    regSignInLink: 'تسجيل الدخول',
+    regErrName: 'يرجى إدخال الاسم',
+    regErrIdentifier: 'يرجى إدخال البريد الإلكتروني أو رقم الجوال',
+    regErrPassword: 'يرجى إدخال كلمة المرور',
+    regErrConfirm: 'يرجى تأكيد كلمة المرور',
+    regErrMismatch: 'كلمتا المرور غير متطابقتين',
+    regSuccessToast: 'تم إنشاء الحساب بنجاح. مرحباً بك في لوحة التحكم',
+
+    // Data Vault & Redaction Helpers
+    redactedNotice: 'محجوب للحماية',
+    protectedFieldNotice: '•••••••••••• (محمي)',
+    unauthorizedDisclosure: 'غير مصرح بكشفه (محجوب)',
+    issuedExclusivelyFor: 'صادر حصرياً لـ:',
+    complianceNotice: 'متوافق مع نظام حماية البيانات الشخصية (PDPL)',
+    activeSharesLinked: 'المشاركات النشطة المرتبطة:'
   },
 
   en: {
     // Brand
     brandName: 'Akked',
-    brandTagline: 'Prove what’s needed, protect the rest',
+    brandTagline: 'Personal Data & Consent Guardian',
     brandSub: 'Personal Data & Consent Guardian',
     provenOnly: 'Eligibility Proven',
     noExtraData: 'No extra data was shared',
@@ -242,18 +467,24 @@ const translations = {
     navAlerts: 'Alerts & Activity',
     navSettings: 'Settings',
     navVerifyPortal: 'Verifier Portal',
+    navLanding: 'Home Page',
     createSecureShare: 'Create Secure Share',
+    navLogout: 'Log Out',
+    navLogin: 'Log in',
+    navRegister: 'Create Account',
+    navEnterPlatform: 'Enter Platform',
 
     // Header & Global
     searchPlaceholder: 'Search shares, entities, or proofs...',
     activeLanguage: 'English',
     switchTheme: 'Switch Theme',
+    themeLight: 'Light Mode',
+    themeDark: 'Dark Mode',
 
-    // Intro Section (Section 6)
+    // Intro Section
     introHeading: 'Share only what is required. Keep everything else private.',
-    introDesc: 'Review what will be shared before issuing a purpose-limited, time-limited demo proof.',
-    btnCreateDemoProof: 'Create Demo Proof',
-    btnSeeHowItWorks: 'See How It Works',
+    btnCreateDemoProof: 'Create Proof',
+    btnCreateProof: 'Create Proof',
 
     // Dashboard Stats
     statActiveShares: 'Active Shares',
@@ -267,7 +498,6 @@ const translations = {
 
     // Shares Table
     sharesPageTitle: 'Shares & Proofs Registry',
-    sharesPageSubtitle: 'Complete sovereign control over every credential and proof shared, with one-click revocation.',
     filterAll: 'All',
     filterActive: 'Active',
     filterExpired: 'Expired',
@@ -306,7 +536,7 @@ const translations = {
     // Wizard Step 1
     uploadBoxTitle: 'Drag and drop your document here, or browse files',
     uploadBoxHint: 'Supports PNG, JPG, and PDF. Processing runs entirely within your browser locally.',
-    orChooseSample: 'Or choose a realistic pre-loaded demo template for instant testing:',
+    orChooseSample: 'Or choose a realistic pre-loaded template for instant testing:',
     sampleNationalId: 'Saudi National ID',
     sampleSalaryCert: 'Salary & Employment Certificate',
     sampleRentalContract: 'Certified Rental Lease',
@@ -318,9 +548,8 @@ const translations = {
     purposeAgeCheck: 'Age Eligibility Verification (18+ Only)',
     purposeSalaryCheck: 'Income Threshold & Lease Suitability',
     purposeWarrantyCheck: 'Warranty Validity & Serial Number Check',
-    recipientStore: 'Demo E-Commerce Store',
-    recipientRealEstate: 'Smart Real Estate Platform',
-    recipientCarRental: 'National Car Rental Co.',
+    recipientStore: 'E-Commerce Store',
+    recipientRealEstate: 'Aqar Platform',
     recipientServiceCenter: 'Authorized Electronics Service',
 
     // Wizard Step 3
@@ -333,7 +562,7 @@ const translations = {
 
     // Wizard Step 4 (Before/After)
     beforeAfterTitle: 'Interactive Preview: Original vs. Protected',
-    beforeAfterDesc: 'Review what will be shielded before issuing the verified demo proof.',
+    beforeAfterDesc: 'Review what will be shielded before issuing the verified proof.',
     labelOriginal: 'Full Document (Before)',
     labelProtected: 'Protected Proof (After)',
     redactionTypeSelect: 'Mask Style:',
@@ -368,7 +597,6 @@ const translations = {
 
     // Recipient Verification Portal
     verifyPortalTitle: 'Recipient Verification Portal',
-    verifyPortalSubtitle: 'Verify proofs issued via Akked without accessing unnecessary raw PII.',
     inputProofIdPlaceholder: 'Enter Proof ID (e.g. DEMO-018)...',
     btnCheckProof: 'Verify Credential',
     verifiedClaimTitle: 'Verified Assertion Result:',
@@ -386,14 +614,10 @@ const translations = {
     entitiesPageSubtitle: 'Organizations adhering to minimum data disclosure policies and PDPL privacy standards.',
     entityTrustScore: 'Privacy Compliance Rating',
     entityTotalShares: 'Past Interactions',
-    entityPermittedScopes: 'Allowed Purpose Scopes',
     btnQuickShareToEntity: 'Issue Proof to Entity',
 
     // My Data Vault Page
     myDataPageTitle: 'My Data Vault & Exposure Monitor',
-    myDataPageSubtitle: 'Overview of personal data categories and their exposure across active shares. Zero raw files stored remotely.',
-    localVaultBadge: 'Local Ephemeral Cache Only (Zero-Knowledge)',
-    btnClearCache: 'Purge All Local Cache & Artifacts (Zero-Trace Purge)',
     categoryIdentity: 'Identity & Birth Data',
     categoryFinancial: 'Financial & Salary Data',
     categoryResidency: 'Address & Lease Contracts',
@@ -411,37 +635,269 @@ const translations = {
     alertTypeRevoked: 'Proof Revocation',
     alertTypeSecurity: 'Security / Access Alert',
 
-    // Settings Page
-    settingsPageTitle: 'System & Privacy Settings',
-    settingsPageSubtitle: 'Configure redaction strictness, languages, and personal encryption keys.',
-    tabGeneral: 'General & Language',
-    tabPrivacy: 'Privacy & Minimization Rules',
-    tabSecurity: 'Security & Keypairs',
-    defaultDurationSetting: 'Default Validity Duration:',
-    strictModeToggle: 'Enable Strict Redaction Mode (Auto-Mask All Unlisted PII)',
-    strictModeDesc: 'Automatically redacts any field not explicitly requested by the selected purpose.',
-    watermarkDensitySetting: 'Embedded Watermark Density:',
-    denseWatermark: 'Dense Diagonal Watermark',
-    mediumWatermark: 'Medium Watermark (Recommended)',
-    subtleWatermark: 'Subtle Minimal Watermark',
-    btnSaveSettings: 'Save Preferences',
-    btnResetAll: 'Factory Reset & Wipe All Vault Data',
+    // Redesigned Settings Page
+    settingsPageTitle: 'Settings & Privacy Preferences',
+    settingsPageSubtitle: 'Manage profile information, notification controls, color themes, and comprehensive accessibility options',
+    settingsProfileTab: 'Account & Profile',
+    settingsNotifTab: 'Notifications',
+    settingsThemeTab: 'Appearance & Language',
+    settingsAccessTab: 'Accessibility Mode',
+
+    // Settings - Profile Section
+    profileTitle: 'User Account & Profile',
+    profileSubtitle: 'Your personal identification and cryptographic security identity',
+    profileFullName: 'Full Name',
+    profileEmail: 'Email Address',
+    profilePhone: 'Phone Number',
+    profileRole: 'Role / Designation',
+    profilePrivacyId: 'Unique Privacy Key ID',
+    profileAccountStatus: 'Account Status',
+    profileVerifiedStatus: 'Locally Verified & Protected Account',
+    profileHardwareKey: 'Cryptographic Key Digest (WebCrypto SHA-256)',
+    btnSaveProfile: 'Save Profile Details',
+
+    // Settings - Notification Preferences
+    notifTitle: 'Notification & Alert Preferences',
+    notifSubtitle: 'Granular control over real-time in-app alerts and external browser push notices',
+    notifInAppAlerts: 'In-App Verification Alerts',
+    notifInAppAlertsDesc: 'Receive immediate visual notifications whenever an organization checks your active proof.',
+    notifExpiryReminders: 'Expiry Countdown Reminders',
+    notifExpiryRemindersDesc: 'Send reminder notice 30 minutes before any active share reaches auto-expiration.',
+    notifRevocationAlerts: 'Revocation Confirmations',
+    notifRevocationAlertsDesc: 'Immediate confirmation alert whenever a digital proof is revoked.',
+    notifPushExternal: 'External Browser Push Notifications',
+    notifPushExternalDesc: 'Deliver external browser notifications for important incoming data-sharing requests.',
+    notifWeeklyDigest: 'Periodic Privacy Compliance Digest',
+    notifWeeklyDigestDesc: 'Weekly summary of your exposure health, active credentials, and expired records.',
+
+    // Settings - Appearance & Theme
+    themeTitle: 'Appearance & Language',
+    themeSubtitle: 'Customize visual theme presentation and system language',
+    themeSelectionTitle: 'Color Theme Mode:',
+    themeLightName: 'Light Theme',
+    themeLightDesc: 'Crisp, high-contrast surfaces tailored for well-lit environments',
+    themeDarkName: 'Dark Theme',
+    themeDarkDesc: 'Restrained deep palette engineered for low-light comfort',
+    languageSelectionTitle: 'Interface Language:',
+    languageSelectionDesc: 'Switch instantly between Arabic and English with full directional layout support.',
+
+    // Settings - Accessibility Mode
+    accessTitle: 'Accessibility Mode & Assistive Tools',
+    accessSubtitle: 'Screen-reader optimizations, high-contrast focus rings, external notifications, and spoken audio announcements',
+    accessMasterToggle: 'Enable Master Accessibility Mode',
+    accessMasterToggleDesc: 'Activate enhanced contrast, screen-reader semantics, and audio assistance across the platform.',
+    accessAudioAnnouncements: 'Spoken Audio Announcements on Entry',
+    accessAudioAnnouncementsDesc: 'Speak an audio synthesized summary of active shares and important security notices when you open the app.',
+    accessExternalNotifs: 'External Notifications for Critical Shares',
+    accessExternalNotifsDesc: 'Deliver high-priority OS and browser alerts for critical data-sharing events.',
+    accessHighContrast: 'Enhanced Focus Rings & High Contrast',
+    accessHighContrastDesc: 'Display bold contrast boundaries and accessible outline indicators for keyboard navigation.',
+    accessLargeText: 'Enlarged Text Scaling',
+    accessLargeTextDesc: 'Scale text sizes up by 15% for optimal legibility.',
+    btnTestSpeech: 'Test Spoken Announcement Now',
+    speechAnnouncementPlaying: 'Playing spoken announcement...',
+    speechTestSample: 'Welcome to Akked Privacy Guardian. Accessibility mode is active. All data processing executes locally on your device to safeguard your privacy.',
+
+    // Settings - Voice Assistant & Microphone Controls
+    accessMicVoiceAssistant: 'Interactive Voice Assistant & Microphone (Voice Assistant)',
+    accessMicVoiceAssistantDesc: 'Automatically activates microphone and listens for voice commands to check data requests, review past authorizations, and approve renewals.',
+    btnLaunchVoiceAssistant: 'Launch Voice Assistant & Mic',
+    voiceAssistantTitle: 'Akked Privacy Voice Guardian',
+    voiceListeningPrompt: 'Microphone is active & listening... You can speak: "Yes", "No", "Repeat", or "Explain"',
+    voiceStatusListening: 'Listening to your voice via microphone...',
+    voiceStatusSpeaking: 'Assistant is speaking...',
+    voiceStatusIdle: 'Ready to listen',
+    voiceStatusProcessing: 'Processing request & monitoring renewal procedures...',
+
+    // Microphone Permission Modal
+    micPermissionTitle: 'Microphone Access Permission for Universal Accessibility',
+    micPermissionDesc: 'To enable voice-operated privacy control and conversational data reviews without requiring manual clicks, Akked requests microphone access.',
+    micPrivacyAssurance: 'Privacy Guarantee: No voice audio is ever recorded or uploaded to remote servers; all processing is executed locally in your browser.',
+    btnAllowMic: 'Allow Microphone Access',
+    btnDenyMic: 'Continue Without Mic (Visual Only)',
+    micPermissionGrantedBadge: 'Microphone Permission Granted',
+    micPermissionDeniedBadge: 'Microphone Inactive (Permission Needed)',
+
+    // Persistent Voice Accessibility Bar
+    barListeningNow: 'Listening to your voice via microphone...',
+    barPaused: 'Microphone paused',
+    btnPauseMic: 'Pause Mic',
+    btnResumeMic: 'Resume Listening',
+    btnExitAccessibility: 'Exit Universal Accessibility',
+    liveCaptionsTitle: 'Live Captions & Audio Transcript',
+    scenarioSelectorLabel: 'Test Conversational Voice Scenarios:',
+
+    // Conversational Scenarios
+    scenarioAgeTitle: '1. Age Verification Request (E-Commerce Store)',
+    scenarioSubscriptionTitle: '2. Subscription Renewal Request (ChatGPT)',
+    scenarioRentalTitle: '3. Lease Qualification (Aqar Platform)',
+
+    // Scenario 1: E-Commerce Age Verification
+    voiceAgePrompt: 'You have a request from an E-Commerce Store for age verification. Required: sharing only the result that you are over 18. Do you agree?',
+    voiceAgeConfirmSpeech: 'Your approval to share age proof only is confirmed. Issuing encrypted minimal proof.',
+    voiceAgeExplain: 'Recipient is a verified E-Commerce Store. Purpose: verifying legal age for purchase. Requested data: boolean claim (over 18: true) without exposing ID, name, or address. Validity: 15 minutes. Risk level: lowest, PDPL compliant. Do you agree?',
+
+    // Scenario 2: ChatGPT Subscription Renewal
+    voiceRenewalPrompt: 'You have a subscription renewal request for ChatGPT for 75 SAR. Would you like to renew?',
+    voiceRenewalConfirmSpeech: 'Your approval for the renewal request has been recorded, and I will monitor the process status.',
+    voiceRenewalExplain: 'Recipient is ChatGPT (OpenAI). Purpose: monthly subscription renewal for 75 SAR. Requested data: zero-exposure encrypted token without raw card details. Do you agree to proceed?',
+    chatGptService: 'ChatGPT (OpenAI)',
+    renewalAmountLabel: 'Renewal Amount:',
+    renewalAmountValue: '75.00 SAR / Month',
+    renewalExpiryLabel: 'Target Renewal Date:',
+
+    // Scenario 3: Real Estate Lease Qualification
+    voiceRentalPrompt: 'You have a request from Aqar Platform to verify lease eligibility. Required: proving income bracket without disclosing bank statements. Do you agree?',
+    voiceRentalConfirmSpeech: 'Your approval for income qualification proof is confirmed. Sending verified assertion.',
+    voiceRentalExplain: 'Recipient is Aqar Platform. Purpose: verifying income threshold for lease contracting. Data: category compliance result only without exact income or bank statement. Do you agree?',
+
+    // Universal Conversational Responses
+    voicePromptReject: 'Your rejection has been recorded and data access blocked immediately.',
+    voiceMisunderstood: 'Sorry, I did not catch that clearly. You can ask: Do I have new requests, read alerts, approve, reject, or explain.',
+    voiceTimeoutGentle: 'Need more time? You can say Yes to approve, No to reject, Repeat, or Explain.',
+    voiceSensitivePrompt: 'Notice: this action involves a financial authorization. Do you confirm execution? Say Yes to proceed or No to cancel.',
+    voiceHeardText: 'Detected Voice Input:',
+    
+    // Quick Action Voice Commands
+    voiceCmdYes: 'Yes [Key 1]',
+    voiceCmdNo: 'No [Key 2]',
+    voiceCmdExplain: 'Explain Details [Key 3]',
+    voiceCmdRepeat: 'Repeat Request [Key 4]',
+
+    // Live Checkpoint Announcements & Stepper
+    monitoringTitle: 'Live Real-Time Renewal Monitoring',
+    monitoringSubtitle: 'Tracking encrypted payment authorization and zero-exposure tokenization until official receipt',
+    monitoringStep1: '1. Security Handshake & Cryptographic Identity Check',
+    monitoringStep1Desc: 'Validating SSL certificate and cryptographic hash for ChatGPT without exposing unredacted PII.',
+    monitoringStep2: '2. Zero-Exposure Payment Token Derivation',
+    monitoringStep2Desc: 'Generating a one-time masked payment authorization token without sending credit card numbers.',
+    monitoringStep3: '3. Issuing Verified Authorization to ChatGPT',
+    monitoringStep3Desc: 'Delivering the authenticated renewal proof and closing external network ports.',
+    monitoringStep4: '4. Official Confirmation Received & Recorded',
+    monitoringStep4Desc: 'Official confirmation receipt received from provider and renewal extended successfully.',
+    checkpoint1Announce: 'Stage 1: Validating security handshake and cryptographic identity.',
+    checkpoint2Announce: 'Stage 2: Deriving zero-exposure masked payment token.',
+    checkpoint3Announce: 'Stage 3: Submitting renewal authorization to service provider.',
+    checkpoint4Announce: 'Official confirmation receipt received from provider. Subscription renewal completed and logged securely.',
+    monitoringStatusActive: 'Active real-time monitoring in progress until official confirmation...',
+    monitoringStatusComplete: 'Official confirmation received and procedures completed securely',
+    monitoringHashLabel: 'Cryptographic Process Hash:',
+    btnMinimizeVoice: 'Minimize Assistant',
+    btnCloseVoice: 'Close Assistant',
+
+    // Landing Page
+    landingHeadline: 'Akked Platform',
+    landingBtnLaunch: 'Launch Dashboard — Get Started',
+    landingBtnVerify: 'Verifier Portal for Organizations',
+
+    // Landing Page - Video Section
+    landingVideoTitle: 'Share Only What’s Needed, Protect the Rest',
+    landingVideoSubtitle: 'Learn how Akked enables minimal verifiable assertions without raw document leakage',
+
+    // Landing Page - Use Cases
+    landingUseCasesTitle: 'Trusted Solutions Across Real-World Sectors',
+    landingUseCasesSubtitle: 'Instant compliance with data privacy standards across everyday digital interactions',
+    useCase1Title: 'E-Commerce & Digital Services',
+    useCase1Desc: 'Verify age eligibility without requesting full National ID copies or reading raw identification numbers.',
+    useCase2Title: 'Real Estate & Rental Leases',
+    useCase2Desc: 'Prove income qualification and lease suitability without exposing bank statements or IBAN details.',
+    useCase3Title: 'Car Rental & Mobility',
+    useCase3Desc: 'Prove valid driving license status and age threshold without storing photocopies of personal cards.',
+    useCase4Title: 'Service Centers & Warranty',
+    useCase4Desc: 'Validate warranty status and serial numbers without disclosing purchase price or personal invoice PII.',
+
+    // Landing Page - CTA Banner & Footer
+    landingCtaTitle: 'Take Sovereign Control Over Your Personal Documents Today',
+    landingCtaDesc: 'Experience seamless, purpose-limited data sharing powered by Akked.',
+    landingFooterRights: 'All Rights Reserved. Akked Platform © 2026',
+    landingFooterTagline: 'Akked Privacy Platform.',
 
     // Toasts & Dialogs
     copiedToClipboard: 'Verification link copied to clipboard!',
     proofRevokedToast: 'Proof revoked successfully. The recipient can no longer verify it.',
-    cacheClearedToast: 'All cached artifacts and memory purged completely.',
-    settingsSavedToast: 'Privacy preferences saved successfully.',
+    settingsSavedToast: 'Preferences saved successfully.',
+    profileSavedToast: 'Profile details updated successfully.',
     confirmRevokeTitle: 'Are you sure you want to revoke this proof?',
     confirmRevokeDesc: 'Once revoked, the QR code and verification link will immediately fail verification.',
     btnConfirmRevoke: 'Yes, Revoke Now',
     btnCancel: 'Cancel',
-    legalDisclaimer: 'Disclaimer: This proof is a user-consented, cryptographically signed personal assertion. It does not claim government-document authenticity unless an official issuer integration exists.'
+
+    // Video Localization
+    videoSectionTitle: 'Discover Akked',
+    videoSectionDesc: 'See how Akked protects your data and shares only what is required.',
+    videoPlayLabel: 'Play video',
+    videoReplayLabel: 'Replay Video',
+    videoSlogan: 'Prove what is required, protect the rest.',
+
+    // Interactive Character Illustration inside Device Screen
+    charTitle: 'Identity verification',
+    charSubheading: 'Additional data',
+    charResult: 'Eligible only',
+
+    // Hero Section
+    heroTitle: 'Prove What Is Required, Protect the Rest',
+    heroSubtitle: 'Share only what is required without revealing your other personal data.',
+
+    // Three-Phone Process Graphic
+    howItWorksTitle: 'How Akked Works',
+    howItWorksSubtitle: 'Three simple steps to prove what is required without sharing your complete personal data.',
+    howItWorksBtn: 'Enter the Platform',
+
+    // Login Page
+    loginTitle: 'Sign In',
+    loginSubtitle: 'Secure access to your account and dashboard on Akked Platform',
+    loginIdentifier: 'Email or Mobile Number',
+    loginIdentifierPlaceholder: 'Enter your email or mobile',
+    loginPassword: 'Password',
+    loginForgot: 'Forgot password?',
+    loginBtn: 'Sign In',
+    loginNoAccount: 'Don\'t have an account?',
+    loginCreateAccount: 'Create a new account',
+    loginNafathBadge: 'Verification via National Single Sign-On coming soon',
+    loginErrIdentifier: 'Please enter your email or mobile number',
+    loginErrPassword: 'Please enter your password',
+    loginSuccessToast: 'Signed in successfully. Welcome to the dashboard',
+    loginShowPassword: 'Show password',
+    loginHidePassword: 'Hide password',
+    loginForgotTitle: 'Password Recovery',
+    loginForgotBody: 'Password recovery service will be available soon.',
+    loginBackHome: 'Back to Home',
+
+    // Registration Page
+    regTitle: 'Create New Account',
+    regSubtitle: 'Join Akked Platform to protect and share your data with total sovereignty',
+    regName: 'Full Name',
+    regNamePlaceholder: 'Enter your full name',
+    regIdentifier: 'Email or Mobile Number',
+    regIdentifierPlaceholder: 'Enter your email or mobile',
+    regPassword: 'Password',
+    regPasswordConfirm: 'Confirm Password',
+    regSubmit: 'Create Account',
+    regHaveAccount: 'Already have an account?',
+    regSignInLink: 'Sign In',
+    regErrName: 'Please enter your name',
+    regErrIdentifier: 'Please enter your email or mobile number',
+    regErrPassword: 'Please enter your password',
+    regErrConfirm: 'Please confirm your password',
+    regErrMismatch: 'Passwords do not match',
+    regSuccessToast: 'Account created successfully. Welcome to the dashboard',
+
+    // Data Vault & Redaction Helpers
+    redactedNotice: 'Hidden for Privacy',
+    protectedFieldNotice: '•••••••••••• (Protected)',
+    unauthorizedDisclosure: 'Unauthorized to disclose (Redacted)',
+    issuedExclusivelyFor: 'Issued Exclusively For:',
+    complianceNotice: 'Compliant with Personal Data Protection Law (PDPL)',
+    activeSharesLinked: 'Active Shares Linked:'
   }
 };
 
 window.I18N = {
   currentLang: 'ar',
+  
+  getLanguage() {
+    return this.currentLang || (typeof localStorage !== 'undefined' ? localStorage.getItem('akked_lang') : 'ar') || 'ar';
+  },
   
   t(key, params = {}) {
     const langDict = translations[this.currentLang] || translations.ar;

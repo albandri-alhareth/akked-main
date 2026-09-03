@@ -1,6 +1,6 @@
 # أكد (Akked) — Personal Data & Consent Guardian
 ## وثيقة المشروع والمواصفات الفنية والأكاديمية لمشروع التخرج
-### "أثبت المطلوب، واحفظ الباقي" | "Prove what's needed, protect the rest"
+### "حارس البيانات الشخصية والموافقات" | "Personal Data & Consent Guardian"
 
 ---
 

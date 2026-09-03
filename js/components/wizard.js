@@ -46,7 +46,7 @@ window.AkkedWizard = {
           ${steps.map(s => `
             <div class="wizard-step-item ${this.currentStep === s.num ? 'active' : (this.currentStep > s.num ? 'completed' : '')}" onclick="AkkedWizard.goToStep(${s.num})">
               <div class="step-circle">
-                ${this.currentStep > s.num ? '✓' : s.num}
+                ${this.currentStep > s.num ? AkkedIcons.get('check', { size: 14, strokeWidth: 3 }) : s.num}
               </div>
               <span class="step-label">${s.label}</span>
             </div>
@@ -127,7 +127,7 @@ window.AkkedWizard = {
     const isAr = I18N.currentLang === 'ar';
     const purposes = [
       { id: 'purpose_age', nameAr: 'التحقق من الأهلية العمرية (فوق 18 عاماً)', nameEn: 'Age Eligibility Verification (18+ Only)', icon: AkkedIcons.get('user-check', { size: 20 }), docReq: 'national_id', defaultRecipient: 'recipient_store' },
-      { id: 'purpose_salary', nameAr: 'التحقق من الحد الأدنى للراتب وملاءمة الإيجار', nameEn: 'Income Threshold & Lease Suitability', icon: AkkedIcons.get('credit-card', { size: 20 }), docReq: 'salary_cert', defaultRecipient: 'recipient_car_rental' },
+      { id: 'purpose_salary', nameAr: 'التحقق من الحد الأدنى للراتب وملاءمة الإيجار', nameEn: 'Income Threshold & Lease Suitability', icon: AkkedIcons.get('credit-card', { size: 20 }), docReq: 'salary_cert', defaultRecipient: 'recipient_aqar' },
       { id: 'purpose_warranty', nameAr: 'التحقق من سريان الضمان والرقم التسلسلي', nameEn: 'Warranty Validity & Serial Check', icon: AkkedIcons.get('shield-check', { size: 20 }), docReq: 'warranty_receipt', defaultRecipient: 'recipient_service_center' }
     ];
 
@@ -137,7 +137,7 @@ window.AkkedWizard = {
           2. ${I18N.t('step2')}: ${I18N.t('selectRecipientTitle')}
         </h2>
         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">
-          ${isAr ? 'حدد الغرض المصرح به بدقة لتطبيق مبدأ تقليص البيانات وحجب كافة العناصر غير المتعلقة به.' : 'Specify the authorized purpose to apply data minimization and shield unneeded personal elements.'}
+          ${isAr ? 'حدد الغرض المصرح به لإصدار الإثبات المطلوب بدقة.' : 'Specify the authorized purpose for issuing the required proof.'}
         </p>
 
         <!-- Purpose Selection -->
@@ -469,7 +469,7 @@ window.AkkedWizard = {
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${I18N.t('privacyScoreDesc')}</div>
             </div>
           </div>
-          <span class="badge badge-active" style="padding: 8px 16px; font-size: 0.9rem;">
+          <span class="badge badge-active">
             ${AkkedIcons.get('check-circle', { size: 14 })} ${isAr ? 'اجتاز فحص الأمان بنجاح' : 'Passed Privacy Audit'}
           </span>
         </div>
@@ -568,26 +568,15 @@ window.AkkedWizard = {
             <picture style="display: block; line-height: 0;">
               <source srcset="assets/akkid-logo.webp" type="image/webp">
               <img src="assets/akkid-logo.png" 
-                   alt="أكّد - أثبت المطلوب، واحفظ الباقي" 
-                   title="أكّد - أثبت المطلوب، واحفظ الباقي" 
+                   alt="أكّد" 
+                   title="أكّد" 
                    class="official-akkid-logo" 
                    width="64" 
                    height="88" 
                    style="width: 64px; height: auto; display: block; object-fit: contain;">
             </picture>
-            <span class="badge badge-active" style="padding: 4px 10px; display: inline-flex; align-items: center; gap: 6px;">
-              <picture style="display: inline-flex; line-height: 0;">
-                <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                <img class="single-pulse-badge" 
-                     src="assets/checkmark-verified-mint.png" 
-                     alt="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     title="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     aria-label="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     width="14" 
-                     height="14" 
-                     style="width: 14px; height: 14px; object-fit: contain;">
-              </picture>
-              <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
+            <span class="badge badge-active">
+              ${isAr ? 'مؤهل فقط' : 'Eligible only'}
             </span>
           </div>
 

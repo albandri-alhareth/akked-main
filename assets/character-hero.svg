@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 440" width="100%" height="100%" class="akked-hero-character-svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Gradients matching Akkid Palette -->
+    <linearGradient id="blazerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171A2E"/>
+      <stop offset="100%" stop-color="#4F0D49"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68145F"/>
+      <stop offset="100%" stop-color="#4F0D49"/>
+    </linearGradient>
+    <linearGradient id="phoneScreenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EEF0F4"/>
+    </linearGradient>
+    <linearGradient id="mintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#55BFA3"/>
+      <stop offset="100%" stop-color="#3FA68B"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#171A2E" flood-opacity="0.12"/>
+    </filter>
+    <filter id="mintGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#55BFA3" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Aura (Subtle Soft Gray/Purple Radial) -->
+  <circle cx="190" cy="220" r="160" fill="#EEF0F4" opacity="0.55"/>
+  <circle cx="190" cy="220" r="130" fill="url(#purpleGrad)" opacity="0.06"/>
+
+  <!-- Character Group Root -->
+  <g id="hero-character-body" class="char-body-group">
+
+    <!-- Torso & Shoulders (Gentle breathing movement) -->
+    <g id="char-torso" class="char-torso-anim">
+      <!-- Upper Body / Blazer -->
+      <path d="M90 380 Q95 285 140 260 L240 260 Q285 285 290 380 L310 440 L70 440 Z" fill="url(#blazerGrad)" filter="url(#softShadow)"/>
+      
+      <!-- Modest Inner Blouse / Shirt -->
+      <path d="M152 260 L190 320 L228 260 Z" fill="#FFFFFF"/>
+      
+      <!-- Blazer Lapels / Collar in Deep Purple -->
+      <path d="M140 260 L180 345 L190 345 L152 260 Z" fill="#68145F"/>
+      <path d="M240 260 L200 345 L190 345 L228 260 Z" fill="#4F0D49"/>
+
+      <!-- Accent Pocket Detail -->
+      <path d="M115 365 L145 365" stroke="#68145F" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    </g>
+
+    <!-- Neck & Head Group (Gentle tilt & breathing) -->
+    <g id="char-head-group" class="char-head-anim">
+      <!-- Neck -->
+      <path d="M172 230 L172 265 Q190 272 208 265 L208 230 Z" fill="#E5B895"/>
+      <path d="M172 248 Q190 258 208 248 L208 265 Q190 272 172 265 Z" fill="#D49B74" opacity="0.4"/>
+
+      <!-- Head & Face Base -->
+      <ellipse cx="190" cy="180" rx="42" ry="52" fill="#E5B895" filter="url(#softShadow)"/>
+
+      <!-- Hair Back / Silhouette -->
+      <path d="M142 180 Q138 120 190 120 Q242 120 238 180 Q235 220 226 230 Q205 240 190 240 Q175 240 154 230 Q145 220 142 180 Z" fill="#171A2E"/>
+
+      <!-- Ears -->
+      <circle cx="148" cy="182" r="9" fill="#E5B895"/>
+      <circle cx="232" cy="182" r="9" fill="#E5B895"/>
+      <circle cx="148" cy="182" r="5" fill="#D49B74" opacity="0.6"/>
+      <circle cx="232" cy="182" r="5" fill="#D49B74" opacity="0.6"/>
+
+      <!-- Face Inner Tone -->
+      <ellipse cx="190" cy="184" rx="38" ry="46" fill="#E8BD9C"/>
+
+      <!-- Natural Modern Hair Front / Hairstyle -->
+      <path d="M144 165 Q155 130 190 128 Q228 126 236 160 Q225 145 198 142 Q168 138 148 160 Z" fill="#171A2E"/>
+      <path d="M148 160 Q175 145 205 152 Q180 140 152 152 Z" fill="#4F0D49" opacity="0.6"/>
+
+      <!-- Eyebrows (Calm, friendly, professional) -->
+      <path d="M162 165 Q172 162 180 166" stroke="#171A2E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M200 166 Q208 162 218 165" stroke="#171A2E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+      <!-- Eyes (Blinking Animation Group) -->
+      <g id="char-eyes" class="char-eyes-anim">
+        <!-- Left Eye -->
+        <ellipse cx="171" cy="176" rx="4.5" ry="4.5" fill="#171A2E"/>
+        <circle cx="172.5" cy="174.5" r="1.5" fill="#FFFFFF"/>
+        
+        <!-- Right Eye -->
+        <ellipse cx="209" cy="176" rx="4.5" ry="4.5" fill="#171A2E"/>
+        <circle cx="210.5" cy="174.5" r="1.5" fill="#FFFFFF"/>
+
+        <!-- Subtle Eyelashes/Crease -->
+        <path d="M166 172 Q171 170 176 172" stroke="#171A2E" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M204 172 Q209 170 214 172" stroke="#171A2E" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </g>
+
+      <!-- Nose (Minimalist, approachable 2D) -->
+      <path d="M189 178 L187 192 L193 192" stroke="#D49B74" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+      <!-- Friendly Smile (Approachability) -->
+      <path d="M178 205 Q190 214 202 205" stroke="#68145F" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <!-- Soft Cheek Tone -->
+      <circle cx="162" cy="192" r="7" fill="#E08B8B" opacity="0.25"/>
+      <circle cx="218" cy="192" r="7" fill="#E08B8B" opacity="0.25"/>
+    </g>
+
+    <!-- Arms & Smartphone Presentation Group -->
+    <g id="char-arms-phone" class="char-arms-group">
+      <!-- Left Arm supporting phone -->
+      <path d="M100 370 Q110 310 145 315 L165 330 Q145 355 125 410 Z" fill="#171A2E"/>
+      <!-- Right Arm tapping phone -->
+      <path d="M280 370 Q270 310 235 315 L215 330 Q235 355 255 410 Z" fill="#171A2E"/>
+
+      <!-- The Tablet Screen Container -->
+      <g id="hero-smartphone" transform="translate(130, 268)" filter="url(#softShadow)">
+        <!-- Tablet Outer Frame -->
+        <rect x="0" y="0" width="124" height="160" rx="16" fill="#171A2E" stroke="#4F0D49" stroke-width="2.5"/>
+        
+        <!-- White Tablet Screen Glass -->
+        <rect x="6" y="8" width="112" height="144" rx="11" fill="#FFFFFF"/>
+        <rect x="6" y="8" width="112" height="144" rx="11" fill="url(#phoneScreenGrad)" opacity="0.6"/>
+
+        <!-- Tablet Top Notch/Speaker -->
+        <rect x="48" y="11" width="28" height="2.5" rx="1.2" fill="#171A2E" opacity="0.25"/>
+
+        <!-- 4. Heading: «التحقق من بيانات الهوية» at Top Center with Generous Padding -->
+        <g transform="translate(62, 17)">
+          <!-- Mini Centered Akkid Shield Icon -->
+          <path d="M-5 0 L0 -2.5 L5 0 L5 4.5 Q5 8 0 10.5 Q-5 8 -5 4.5 Z" fill="#68145F"/>
+          <path d="M-2.5 4 L-0.8 5.8 L2.8 2.2" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          
+          <!-- Heading Text strictly centered, RTL, with safe padding -->
+          <text x="0" y="16.5" font-family="Tajawal, sans-serif" font-size="6.4" font-weight="800" fill="#171A2E" text-anchor="middle" direction="rtl">التحقق من بيانات الهوية</text>
+        </g>
+
+        <!-- Subtle Divider Line Centered -->
+        <line x1="22" y1="41" x2="102" y2="41" stroke="#EEF0F4" stroke-width="1"/>
+
+        <!-- 5. «البيانات الإضافية» in Center + 6. Clean Centered Bullet List of Small Dots -->
+        <g id="phone-data-rows" class="phone-data-anim">
+          <!-- Subheading «البيانات الإضافية» in Center -->
+          <text x="62" y="55" font-family="Tajawal, sans-serif" font-size="6.6" font-weight="700" fill="#4F0D49" text-anchor="middle" direction="rtl">البيانات الإضافية</text>
+          
+          <!-- Bullet Item 1 (Clean small dot + masked dots, perfectly centered) -->
+          <g transform="translate(62, 68)">
+            <circle cx="-22" cy="-1.5" r="1.6" fill="#68145F"/>
+            <text x="2" y="1" font-family="monospace" font-size="7" font-weight="700" fill="#68145F" letter-spacing="1.5" text-anchor="middle">••••••••</text>
+          </g>
+
+          <!-- Bullet Item 2 (Clean small dot + masked dots, perfectly centered) -->
+          <g transform="translate(62, 79)">
+            <circle cx="-22" cy="-1.5" r="1.6" fill="#68145F"/>
+            <text x="2" y="1" font-family="monospace" font-size="7" font-weight="700" fill="#68145F" letter-spacing="1.5" text-anchor="middle">••••••••</text>
+          </g>
+
+          <!-- Bullet Item 3 (Clean small dot + masked dots, perfectly centered) -->
+          <g transform="translate(62, 90)">
+            <circle cx="-22" cy="-1.5" r="1.6" fill="#68145F"/>
+            <text x="2" y="1" font-family="monospace" font-size="7" font-weight="700" fill="#68145F" letter-spacing="1.5" text-anchor="middle">••••••••</text>
+          </g>
+        </g>
+
+        <!-- Confirmation Mint Check Pop (Centered above result badge) -->
+        <g id="phone-mint-check" class="phone-check-anim" transform="translate(62, 103)">
+          <circle cx="0" cy="0" r="10" fill="#55BFA3" filter="url(#mintGlow)"/>
+          <path d="M-3.5 0 L-1 2.5 L3.5 -2.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </g>
+
+        <!-- 7. Green «مؤهل فقط» Result Centered, Fully Contained (No overlap with hands or frame) -->
+        <g id="phone-result-badge" class="phone-result-anim" transform="translate(62, 116)">
+          <rect x="-37" y="0" width="74" height="21" rx="10.5" fill="url(#mintGrad)" filter="url(#mintGlow)"/>
+          <path d="M-23 10.5 L-19.5 14 L-13 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="6" y="13.5" font-family="Tajawal, sans-serif" font-size="7.8" font-weight="900" fill="#FFFFFF" text-anchor="middle" direction="rtl">مؤهل فقط</text>
+        </g>
+      </g>
+
+      <!-- Left Hand (Holding side of phone) -->
+      <g id="char-hand-hold">
+        <!-- Thumb -->
+        <path d="M124 330 Q126 312 136 318 Q142 328 134 340 Z" fill="#E5B895"/>
+        <!-- Fingers supporting back/edge -->
+        <ellipse cx="124" cy="350" rx="6" ry="12" fill="#D49B74"/>
+      </g>
+
+      <!-- Right Hand & Tapping Index Finger (Natural gentle tap animation) -->
+      <g id="char-hand-tap" class="char-tap-anim">
+        <!-- Wrist & Palm -->
+        <ellipse cx="230" cy="340" rx="14" ry="10" fill="#E5B895"/>
+        <path d="M224 332 L206 316 Q200 312 205 306 Q210 300 216 308 L228 325 Z" fill="#E5B895"/>
+        <!-- Fingertip approaching screen -->
+        <circle cx="204" cy="310" r="4.5" fill="#D49B74"/>
+        <!-- Tap ripple effect on phone surface -->
+        <circle id="phone-tap-ripple" cx="204" cy="310" r="10" stroke="#55BFA3" stroke-width="1.5" fill="none" opacity="0" class="tap-ripple-anim"/>
+      </g>
+    </g>
+
+  </g>
+</svg>
