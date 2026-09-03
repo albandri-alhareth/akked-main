@@ -4,57 +4,71 @@
 
 ## Project Overview
 
-Akked is a bilingual graduation project that presents a privacy-focused approach to digital verification. The platform allows individuals to prove a required fact without sharing an entire identity document or disclosing unrelated personal information.
+Akked is a bilingual, privacy-focused web application developed as a graduation project. It enables individuals to prove a required fact without sharing an entire personal document or revealing information that is unrelated to the requested service.
 
-The project is based on the principle of **Minimum Necessary Disclosure**. This means that the requesting organization receives only the specific result required for a defined purpose, while all unnecessary personal details remain protected.
+The project is based on the principle of **Minimum Necessary Disclosure**. This means that the requesting organization receives only the specific verification result it needs, while unnecessary personal information remains protected.
 
-For example, if an organization needs to verify whether a person is eligible for a service, it may receive only an “Eligible” or “Not Eligible” result. The user does not need to reveal their full name, national identification number, date of birth, address, or any other unrelated information.
+For example, if an organization needs to confirm whether a user meets a particular eligibility condition, it receives only an “Eligible” or “Not Eligible” result. The user does not need to reveal their full name, national identification number, date of birth, address, photograph, or any other unrelated information.
 
-Akked is designed as a responsive web application that works on desktop computers, laptops, tablets, and mobile phones. It provides a complete Arabic interface with right-to-left direction and a complete English interface with left-to-right direction.
+Akked is a responsive web application that works on mobile phones, tablets, laptops, and desktop computers. It supports Arabic with a right-to-left interface and English with a left-to-right interface.
 
 ## The Problem
 
-Many digital services request complete documents even when only one piece of information needs to be verified. A user may be asked to upload a full identity document simply to confirm eligibility, age, salary range, or warranty status.
+Many digital services request complete personal documents even when only one piece of information needs to be verified.
 
-This approach may create several privacy and security concerns:
+A user may be required to upload a full identity document to prove eligibility, salary range, or warranty status. This may expose information that is not required for the transaction.
 
-- Personal information unrelated to the requested service may be disclosed.
-- Copies of sensitive documents may be stored by several organizations.
-- Users may not know which organizations accessed their information.
+This approach creates several privacy and security concerns:
+
+- Unnecessary personal information may be disclosed.
+- Complete copies of sensitive documents may be stored by several organizations.
+- Users may not know which organization accessed their information.
 - Users may not know how long their documents will remain available.
 - Documents may be reused for purposes that were not originally approved.
-- Users may have limited control over cancelling or revoking an active disclosure.
+- Users may have limited control over revoking an active disclosure.
 - Sharing complete documents increases the possible impact of unauthorized access or data leakage.
 
 ## Proposed Solution
 
-Akked provides a controlled method for creating a limited digital proof. Each proof is connected to four main elements:
+Akked provides a controlled process for creating a limited digital proof.
+
+Each disclosure is connected to:
 
 - The specific information that needs to be verified.
 - The organization receiving the proof.
 - The stated purpose of the request.
 - The period during which the proof remains valid.
 
-The user selects a document and chooses the purpose of the verification. The platform identifies personal and sensitive fields, determines which information is necessary for the selected purpose, and conceals all unrelated data.
+The user selects a document, identifies the requesting organization, and chooses the verification purpose. The platform identifies personal and sensitive fields, determines which information is necessary, and conceals all unrelated data.
 
-Before issuing the proof, the user can compare the original document with the protected version. The final proof contains only the approved result and does not reveal the hidden information.
+Before issuing the proof, the user can compare the original document with the protected version. The final proof displays only the approved verification result.
 
-A SHA-256 cryptographic digest is generated to help detect unauthorized changes to the proof. A dynamic watermark is also added and connected to the recipient, purpose, and validity period. Users can monitor their issued proofs and revoke active disclosures through a central registry.
+A SHA-256 cryptographic digest is generated to help detect unauthorized changes. A dynamic watermark connects the protected output to the intended recipient, purpose, and validity period.
+
+Users can monitor their issued proofs and revoke active disclosures through a central registry.
 
 ## Project Objectives
 
-The main objectives of Akked are:
+The objectives of Akked are:
 
-- Applying the Minimum Necessary Disclosure principle to digital verification.
-- Giving individuals greater control over their personal information.
-- Reducing the circulation of complete identity documents.
-- Preventing unnecessary personal data from being disclosed.
-- Allowing organizations to verify a claim without accessing hidden information.
-- Connecting every disclosure to a specific recipient, purpose, and validity period.
-- Providing users with a clear record of active, expired, and revoked disclosures.
-- Supporting immediate revocation of active proofs.
-- Providing an accessible bilingual experience.
-- Delivering a responsive interface suitable for mobile and desktop devices.
+- Apply the Minimum Necessary Disclosure principle to digital verification.
+- Give individuals greater control over their personal information.
+- Reduce unnecessary sharing of complete identity documents.
+- Prevent unrelated personal information from being disclosed.
+- Allow organizations to verify a claim without accessing concealed data.
+- Connect each disclosure to a specific recipient and purpose.
+- Limit each proof to a defined validity period.
+- Record active, expired, and revoked disclosures.
+- Allow users to revoke active proofs.
+- Support Arabic and English throughout the application.
+- Provide a responsive experience on mobile and desktop devices.
+- Promote responsible personal-data sharing practices.
+
+## Target Users
+
+The primary users of Akked are individuals who need to prove a specific fact without sharing a complete personal document.
+
+The secondary users are organizations that need to verify the requested result without accessing unrelated personal information.
 
 ## How Akked Works
 
@@ -64,37 +78,33 @@ The secure sharing process consists of six main steps.
 
 The user uploads a document from their device or selects one of the available demonstration templates.
 
-The available templates may include:
+The templates include examples such as:
 
 - Saudi National ID.
 - Salary certificate.
 - Warranty invoice.
 
-Documents are used to demonstrate how unnecessary personal information can be detected and concealed.
-
 ### Step 2: Recipient and Purpose Selection
 
-The user identifies the organization requesting the proof and selects the specific verification purpose.
+The user selects the requesting organization and identifies the exact purpose of the verification.
 
-Possible purposes include:
+Supported demonstration purposes include:
 
 - Eligibility verification.
 - Salary-threshold verification.
 - Warranty verification.
 
-Connecting the proof to a specific purpose helps prevent it from being reused for a different request.
-
 ### Step 3: Data Minimization Analysis
 
 The platform analyzes the document and identifies fields that may contain personally identifiable information.
 
-The system separates the fields required for the selected purpose from the fields that are not necessary. Unnecessary fields are marked for protection before the proof is issued.
+It separates the information required for the selected purpose from unrelated personal data.
 
 ### Step 4: Before-and-After Review
 
-The platform displays the original document and the protected version side by side.
+The original document and protected version are displayed for comparison.
 
-This allows the user to confirm which information will be shared and which information will remain concealed.
+The user can review which information will be disclosed and which fields will remain concealed.
 
 The available protection methods include:
 
@@ -103,27 +113,25 @@ The available protection methods include:
 - Pixelation.
 - Tokenization.
 
-The user can review the protected output before approving the disclosure.
-
 ### Step 5: Protection and Validity Settings
 
 The user selects the period during which the proof will remain valid.
 
-The available periods may range from five minutes to thirty days, depending on the selected verification scenario.
-
-The platform also calculates a privacy score and adds a dynamic watermark connected to the intended recipient and purpose.
+The platform calculates a privacy score and adds a dynamic watermark connected to the intended recipient and purpose.
 
 ### Step 6: Proof Issuance
 
-After the user approves the protected version, Akked issues a digital proof containing:
+After approval, Akked issues a digital proof containing:
 
-- The required verification result.
+- The approved verification result.
 - A unique proof reference number.
 - A QR code.
 - A SHA-256 cryptographic digest.
-- The recipient’s information.
+- The requesting organization.
 - The verification purpose.
-- The proof expiration time.
+- The creation date.
+- The expiration time.
+- The current proof status.
 
 The proof does not display the concealed personal information.
 
@@ -131,81 +139,71 @@ The proof does not display the concealed personal information.
 
 ### Dashboard
 
-The dashboard provides a clear overview of the user’s privacy activity.
+The dashboard provides an overview of the user’s privacy activity, including:
 
-It includes:
-
-- Number of active disclosures.
-- Number of expired disclosures.
-- Number of protected personal-information fields.
+- Active disclosures.
+- Expired disclosures.
+- Protected personal-information fields.
 - Privacy Health Score.
-- Recent activity timeline.
+- Recent activity.
 - Quick access to the secure sharing process.
 
 ### Secure Share Wizard
 
 The Secure Share Wizard guides the user through the complete disclosure process.
 
-Each step is presented separately to make the process easier to understand and reduce the possibility of accidental data exposure.
-
-The wizard explains:
+Each stage explains:
 
 - What information is being requested.
-- Why the organization needs it.
+- Which organization is requesting it.
+- Why the information is required.
 - What information will be shared.
 - What information will remain protected.
 - How long the proof will remain valid.
 
 ### Before-and-After Preview
 
-The preview feature allows users to compare the original document with the protected version before approving the proof.
+The preview allows the user to compare the complete document with the protected version before approving the disclosure.
 
-This step helps users ensure that no unnecessary personal information remains visible.
+This helps prevent accidental exposure of unnecessary information.
 
 ### Recipient Verification Portal
 
-The Recipient Verification Portal allows organizations to verify issued proofs without accessing the concealed data.
+The Recipient Verification Portal allows an organization to verify an issued proof without viewing concealed information.
 
-The recipient can enter a proof reference, such as `DEMO-018`, or scan the QR code to view:
+The recipient can enter a proof reference, such as `DEMO-018`, or use the QR code to view:
 
 - Proof status.
 - Verification result.
-- Intended purpose.
+- Verification purpose.
 - Expiration status.
 - Cryptographic verification information.
 
 ### Shares Registry
 
-The Shares Registry contains a searchable and filterable record of disclosures.
+The Shares Registry provides a searchable and filterable record of disclosures.
 
-Each record may show:
+Proofs may be displayed as:
 
-- Recipient.
-- Purpose.
-- Creation date.
-- Expiration date.
-- Current status.
-- Revocation option.
+- Active.
+- Expired.
+- Revoked.
 
-Proofs may appear as active, expired, or revoked. Active disclosures can be revoked directly from the registry.
+The user can revoke an active disclosure directly from the registry.
 
 ### My Data Vault
 
-My Data Vault provides an overview of personal-information categories detected during the demonstration.
+My Data Vault provides an overview of the personal-information categories detected during the demonstration.
 
-It helps users understand which types of information have appeared in their previous disclosures.
-
-The vault also includes a Zero-Trace Purge option that clears temporary data stored locally by the application.
+It also provides an option to clear temporary information stored locally by the application.
 
 ### Trusted Entities
 
 The Trusted Entities section provides a demonstration directory of organizations that follow relevant privacy and personal-data protection practices.
 
-This section is intended to help users identify the recipient and understand the purpose of each request.
-
 ### Settings
 
-The Settings page allows users to configure:
+The Settings page allows the user to configure:
 
 - Strict redaction mode.
 - Watermark density.
@@ -218,23 +216,23 @@ The Settings page allows users to configure:
 
 Suppose an online service needs to confirm that a user meets a particular eligibility condition.
 
-Under the traditional approach, the user may be asked to upload a complete identity document. This document could reveal the user’s name, identification number, date of birth, photograph, address, and other information that is not required for the transaction.
+Under the traditional approach, the user may be asked to upload a complete identity document. This document may reveal the user’s name, identification number, date of birth, photograph, address, and other unnecessary information.
 
-Using Akked, the user selects the requesting organization and the exact purpose of the verification. The platform analyzes the document and conceals all information that is not necessary.
+Using Akked, the user selects the requesting organization and verification purpose. The platform analyzes the document and conceals all information that is not required.
 
-The final proof provides only an “Eligible” or “Not Eligible” result. The recipient can verify the proof and confirm its validity without viewing the user’s complete identity document.
+The final proof provides only an “Eligible” or “Not Eligible” result. The recipient can verify the result and its validity without accessing the complete identity document.
 
 ## Technical Approach
 
-Akked is implemented as a browser-based web application. The current demonstration performs its document presentation and processing locally on the user’s device.
+Akked is implemented as a browser-based web application.
 
-The technical design includes the following components.
+The prototype demonstrates the following technical concepts:
 
 ### Local Processing
 
-Document processing is performed locally within the demonstration environment. This reduces the need to transmit source documents to external services.
+Document presentation and processing are performed locally within the demonstration environment. This reduces the need to send the original document to external services.
 
-### PII Detection
+### Personal Data Detection
 
 The platform identifies fields that may contain personally identifiable information, including:
 
@@ -243,80 +241,159 @@ The platform identifies fields that may contain personally identifiable informat
 - Date of birth.
 - Address.
 - Contact information.
-- Financial details.
+- Financial information.
 - Document reference numbers.
 
 ### Data Minimization
 
 The platform compares the information contained in the document with the selected verification purpose.
 
-Only the information required for that purpose is preserved. All unrelated fields are concealed before the proof is issued.
+Only the necessary information is preserved. All unrelated fields are concealed before the proof is issued.
 
 ### Redaction Methods
 
-Akked supports several methods for protecting personal information:
+Akked demonstrates different methods for protecting personal information:
 
-- Blackout removes the visible content of a selected field.
-- Blur makes the field unreadable.
-- Pixelation hides the details using enlarged pixels.
+- Blackout hides the complete value of a field.
+- Blur makes the original information unreadable.
+- Pixelation conceals the information using enlarged pixels.
 - Tokenization replaces the original value with a non-sensitive representation.
 
 ### SHA-256 Cryptographic Digest
 
-A SHA-256 digest is generated for the issued proof.
+The platform demonstrates the use of SHA-256 to generate a cryptographic digest for an issued proof.
 
-The digest helps detect whether the proof content has been modified after issuance. If the content changes, the generated digest will no longer match the original verification value.
+The digest helps identify whether the proof content has been modified after issuance.
 
 ### Dynamic Watermarking
 
-A dynamic watermark is connected to:
+A dynamic watermark connects the protected output to:
 
 - The intended recipient.
-- The stated purpose.
+- The verification purpose.
 - The date of issuance.
 - The expiration period.
 
-This makes it more difficult to reuse the protected output for an unrelated transaction.
-
 ### Independent Verification
 
-The recipient can verify the proof using its unique reference number or QR code.
-
-The verification process confirms the proof status and approved result without displaying the concealed personal information.
+The recipient can verify a proof through its unique reference number or QR code without accessing the concealed personal information.
 
 ### Expiration and Revocation
 
-Each proof has a defined validity period.
+Each proof has a defined validity period. It becomes invalid after expiration, and the user can revoke an active proof before it expires.
 
-The proof automatically becomes invalid after its expiration time. The user may also revoke an active proof before it expires.
+## Development Technologies
 
-## Language and Layout Support
+The Akked prototype was developed using:
+
+- HTML5 for structuring the website pages and content.
+- CSS3 for styling, responsive layouts, themes, visual components, and Arabic RTL support.
+- JavaScript for interactions, navigation, language switching, forms, document previews, and demonstration workflows.
+- SHA-256 for demonstrating tamper-evident cryptographic digests.
+- Python 3 HTTP Server for running and testing the project locally.
+- Git for version control.
+- GitHub for repository hosting, documentation, and project sharing.
+
+## Development and AI-Assisted Tools
+
+### Antigravity
+
+Antigravity was the primary development environment used to build, test, revise, and organize the Akked website.
+
+It was used to:
+
+- Build the application pages.
+- Develop the website interface.
+- Implement the Arabic and English versions.
+- Improve responsive behavior.
+- Add and update visual content.
+- Test the application.
+- Organize the project files.
+
+### ChatGPT
+
+ChatGPT was used to support:
+
+- Brainstorming.
+- Refining the project idea.
+- Improving written content.
+- Structuring project documentation.
+- Reviewing requirements.
+- Preparing technical explanations.
+- Developing and refining prompts.
+
+### Google Gemini
+
+Google Gemini was used to support:
+
+- Website development.
+- Code generation and refinement.
+- Interface improvements.
+- Bilingual content implementation.
+- Responsive-design improvements.
+- Troubleshooting.
+
+### NotebookLM
+
+NotebookLM was used to:
+
+- Organize project information.
+- Summarize the project concept.
+- Structure the explanatory content.
+- Produce the project’s explanatory video.
+
+### Manus
+
+Manus was used to:
+
+- Prepare the project document.
+- Organize the project information.
+- Structure the project report.
+- Present the project requirements clearly.
+
+### Vercel
+
+Vercel was used to deploy and display the Akked website online.
+
+It provides access to the demonstration version through a web browser without requiring the project to be run locally.
+
+### GitHub
+
+GitHub was used to:
+
+- Host the project source code.
+- Maintain the project repository.
+- Store the README and supporting documentation.
+- Share the project with reviewers.
+- Provide a public reference for the final submission.
+
+These tools supported the planning, development, documentation, and presentation of the project. The project idea, requirements, design decisions, review process, and final implementation were completed and validated by the project team.
+
+## Language Support
 
 Akked supports Arabic and English throughout the application.
 
-### Arabic Interface
-
 The Arabic interface uses:
 
-- Native right-to-left direction.
-- Right-aligned text.
-- Arabic navigation labels.
-- Arabic buttons, forms, messages, and validation text.
-- Arabic versions of visual and interactive content.
-
-### English Interface
+- Right-to-left direction.
+- Right-aligned content.
+- Arabic navigation.
+- Arabic buttons and forms.
+- Arabic labels and messages.
+- Arabic visual content.
 
 The English interface uses:
 
-- Native left-to-right direction.
-- Left-aligned text.
-- English navigation labels.
-- English buttons, forms, messages, and validation text.
-- English versions of visual and interactive content.
+- Left-to-right direction.
+- Left-aligned content.
+- English navigation.
+- English buttons and forms.
+- English labels and messages.
+- English visual content.
 
-When the language is changed, all visible content must change to the selected language. This includes:
+Changing the selected language updates:
 
-- Navigation menus.
+- Navigation items.
 - Page headings.
 - Paragraphs.
 - Buttons.
@@ -326,102 +403,68 @@ When the language is changed, all visible content must change to the selected la
 - Notifications.
 - Labels.
 - Interactive illustrations.
-- Text displayed inside visual elements.
-- Video titles and surrounding video content.
-
-Directional icons, arrows, and chevrons are also adjusted to match the selected reading direction.
-
-## Typography
-
-The Arabic interface uses `IBM Plex Sans Arabic` as the primary font.
-
-The Arabic fallback fonts are:
-
-- `Noto Kufi Arabic`
-- `Tajawal`
-- `-apple-system`
-- `sans-serif`
-
-The English interface uses `Inter` as the primary font for user-interface elements, forms, buttons, tables, and body text.
-
-The English fallback fonts are:
-
-- `-apple-system`
-- `BlinkMacSystemFont`
-- `Segoe UI`
-- `Roboto`
-- `sans-serif`
-
-`Cormorant Garamond` may be used for selected English display headings and academic titles. It is not used for buttons, form inputs, tables, captions, or long paragraphs.
-
-Decorative and cursive fonts are not used for functional interface elements. The base text size is `15px` with a line height of `1.65`. Captions and secondary labels remain between `12.5px` and `13px` with sufficient font weight for readability.
+- Video-related text.
+- Directional icons.
 
 ## Accessibility
 
-The interface was designed with WCAG 2.1 accessibility guidance in mind.
+The interface was designed with accessibility guidance in mind.
 
 The accessibility considerations include:
 
-- Strong contrast between text and backgrounds.
-- Readable typography on desktop and mobile screens.
-- Primary interactive touch targets with a minimum height of `44px`.
-- Visible focus outlines for keyboard navigation.
-- Correct document direction for Arabic and English.
-- Mirrored directional icons when the interface direction changes.
+- Clear contrast between text and backgrounds.
+- Readable typography.
+- Mobile-friendly interactive controls.
+- Visible focus states for keyboard navigation.
+- Correct page direction for Arabic and English.
+- Mirrored directional icons when the language changes.
 - Clear labels for buttons and form fields.
-- Responsive spacing across different screen sizes.
-- Interface elements that remain usable without relying only on color.
-
-The primary interface colors include:
-
-- Deep purple: `#5A1854`
-- Light application background: `#F8F9FD`
-- Primary body text: `#1A1D2E`
-- Secondary slate text: `#475569`
-- Emerald protection and success states: `#0D825B`
-- Dark-theme surface: `#181B26`
-- Dark-theme text: `#F3F4F8`
+- Responsive spacing on different screen sizes.
 
 ## Responsive Design
 
-Akked is designed to work on mobile phones, tablets, laptops, and desktop computers.
+Akked is designed to work on:
+
+- Mobile phones.
+- Tablets.
+- Laptops.
+- Desktop computers.
 
 The responsive interface includes:
 
-- Flexible layouts that adapt to different screen widths.
+- Flexible page layouts.
 - Mobile-friendly buttons and form controls.
 - Navigation suitable for small and large screens.
-- Images and videos that remain within their containers.
+- Images and videos that remain inside their containers.
 - Readable content without horizontal scrolling.
-- Stacked sections on mobile devices.
-- Wider multi-column layouts on laptop and desktop screens.
-- Consistent spacing and visual hierarchy across screen sizes.
+- Stacked content on smaller screens.
+- Wider layouts on laptop and desktop screens.
 
 ## System Requirements
 
-The demonstration version requires:
+The local demonstration requires:
 
 - A modern web browser.
 - JavaScript enabled.
 - Python 3 for running a local development server.
 
-The current demonstration does not require a database or back-end server.
+The current demonstration does not require a database or production back-end server.
 
 ## Running the Project Locally
 
-After downloading or cloning the repository, open a terminal and move to the project directory:
+Open a terminal and move to the project directory:
 
 ```bash
 cd akked
 ```
 
-Start a local server on port `8000`:
+Start the local server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open the following address in your browser:
+Open the following address in a browser:
 
 ```text
 http://localhost:8000
@@ -429,58 +472,54 @@ http://localhost:8000
 
 ## How to Use the Application
 
-1. Open the Akked application.
+1. Open the Akked website.
 2. Select Arabic or English.
 3. Sign in or create a demonstration account.
 4. Open the dashboard.
 5. Start a new secure disclosure request.
-6. Upload a document or select one of the available templates.
+6. Upload a document or select an available template.
 7. Select the requesting organization.
-8. Choose the exact verification purpose.
-9. Review the personal fields detected by the platform.
+8. Choose the verification purpose.
+9. Review the fields detected by the platform.
 10. Compare the original document with the protected version.
-11. Confirm that unnecessary information has been concealed.
+11. Confirm that unnecessary information is concealed.
 12. Select the proof validity period.
-13. Review the dynamic watermark and privacy score.
+13. Review the watermark and privacy score.
 14. Approve and issue the proof.
 15. Share the proof reference or QR code with the intended recipient.
 16. Monitor the proof through the Shares Registry.
 17. Revoke the proof when necessary.
 
-## Technical Documentation
+## Project Documentation
 
-Detailed technical documentation is available in:
+The project repository includes documentation covering:
 
-[project_documentation.md](./project_documentation.md)
-
-The technical documentation covers:
-
-- Functional requirements.
-- User roles.
+- The project idea and objectives.
+- The problem and proposed solution.
+- Target users.
 - Main use cases.
-- Data-minimization process.
-- Privacy architecture.
-- Redaction methods.
-- Proof issuance.
-- Verification logic.
-- Language behavior.
+- Minimum Viable Product scope.
+- Data-minimization workflow.
+- Privacy and security concepts.
+- Proof issuance and verification.
+- Language support.
 - Responsive design.
-- Security considerations.
+- Technologies and tools.
 - Prototype limitations.
 
 ## Current Prototype Limitations
 
-Akked is an educational prototype created to demonstrate the project concept, technical direction, and user experience.
+Akked is an educational prototype developed to demonstrate the proposed concept and user experience.
 
-It is not a production system approved for processing official documents. All templates, user information, organizations, and proof references displayed in the application are intended for demonstration purposes.
+It is not a production system approved for processing official documents. All templates, organizations, user information, and proof references shown in the application are intended for demonstration purposes.
 
 A production implementation would require:
 
-- Secure integration with authorized identity providers.
-- Approved integrations with participating organizations.
+- Integration with authorized identity providers.
+- Approved connections with participating organizations.
 - Secure back-end infrastructure.
 - Protected database storage.
-- Secure cryptographic key management.
+- Secure cryptographic-key management.
 - Authentication and authorization controls.
 - Detailed audit logging.
 - Security and penetration testing.
@@ -492,13 +531,15 @@ A production implementation would require:
 
 The prototype demonstrates privacy-enhancing concepts but should not be used to process real sensitive documents.
 
-Users should use only fictional or demonstration data when testing the application.
+Only fictional or demonstration data should be used when testing the application.
 
-The SHA-256 digest, QR code, redaction methods, and dynamic watermarks are included to demonstrate the intended architecture. They do not independently make the prototype suitable for production use.
+The SHA-256 digest, QR code, redaction methods, and dynamic watermarks demonstrate the intended technical architecture. These features do not independently make the prototype suitable for production use.
 
 ## Training Program
 
 This project was completed as part of the **Generative Programming (البرمجة التوليدية)** training program.
+
+## SDAIA Academy
 
 SDAIA Academy GitHub account:
 
