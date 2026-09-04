@@ -22,9 +22,9 @@
   <meta name="twitter:image" content="https://atheerkf22.github.io/akked/assets/akkid-symbol.jpg">
 
   <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="css/variables.css?v=20260903_v39">
-  <link rel="stylesheet" href="css/main.css?v=20260903_v39">
-  <link rel="stylesheet" href="css/components.css?v=20260903_v39">
+  <link rel="stylesheet" href="css/variables.css?v=20260904_v40">
+  <link rel="stylesheet" href="css/main.css?v=20260904_v40">
+  <link rel="stylesheet" href="css/components.css?v=20260904_v40">
 
   <style>
     /* Inline animations & keyframes */
@@ -45,7 +45,7 @@
       <div class="header-start-brand">
         <!-- Official Logo Symbol at Far-Right (Clickable, links to homepage) -->
         <a href="#landing" onclick="event.preventDefault(); AkkedApp.navigate('landing');" class="dashboard-header-logo-link" aria-label="أكّد - الصفحة الرئيسية" title="الصفحة الرئيسية">
-          <img src="assets/akkid-symbol.jpg" alt="أكّد" class="dashboard-header-logo-img" width="62" height="62">
+          <img src="assets/akkid-symbol.png" alt="أكّد" class="dashboard-header-logo-img" width="44" height="44">
         </a>
 
         <!-- Breadcrumb positioned directly after logo with balanced spacing -->
@@ -64,7 +64,7 @@
         </button>
 
         <!-- Language Switcher Button -->
-        <button class="header-btn" onclick="AkkedApp.toggleLanguage()" title="Change Language" aria-label="Change Language">
+        <button class="header-btn header-lang-btn" id="lang-toggle-btn" onclick="AkkedApp.toggleLanguage()" title="Change Language" aria-label="Change Language">
           <svg class="akked-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           <span id="lang-toggle-text">
             <span class="lang-text-full">English</span>
@@ -73,12 +73,12 @@
         </button>
 
         <!-- Theme Switcher Button -->
-        <button class="header-btn header-btn-icon" onclick="AkkedApp.toggleTheme()" title="Switch Dark/Light Theme" aria-label="Switch Dark/Light Theme">
+        <button class="header-btn header-btn-icon header-theme-btn" onclick="AkkedApp.toggleTheme()" title="Switch Dark/Light Theme" aria-label="Switch Dark/Light Theme">
           <svg class="akked-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
         </button>
 
         <!-- Notification Bell Button -->
-        <div class="notification-badge-wrapper">
+        <div class="notification-badge-wrapper header-notif-btn">
           <button class="header-btn header-btn-icon" onclick="AkkedApp.navigate('alerts')" title="Alerts" aria-label="Alerts">
             <svg class="akked-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </button>
@@ -86,7 +86,7 @@
         </div>
 
         <!-- Platform Logout Button -->
-        <button class="header-btn header-btn-icon" onclick="AkkedApp.logout()" title="تسجيل الخروج" aria-label="تسجيل الخروج" data-i18n-title="navLogout" data-i18n-aria="navLogout">
+        <button class="header-btn header-btn-icon header-logout-btn" onclick="AkkedApp.logout()" title="تسجيل الخروج" aria-label="تسجيل الخروج" data-i18n-title="navLogout" data-i18n-aria="navLogout">
           <svg class="akked-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
@@ -157,6 +157,40 @@
           <span class="nav-icon"><svg class="akked-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
           <span data-i18n="navSettings">الإعدادات</span>
         </a>
+
+        <!-- Mobile Drawer Quick Actions (Visible inside mobile drawer <= 768px) -->
+        <div class="sidebar-mobile-utilities">
+          <div class="nav-section-title" data-i18n="quickActions">إجراءات سريعة</div>
+
+          <!-- Voice Assistant in drawer -->
+          <button type="button" class="sidebar-util-btn" onclick="AkkedApp.toggleMobileSidebar(); AkkedVoiceAssistant.openHUD(); AkkedVoiceAssistant.proactivelyAnnounceRequests();">
+            <span class="nav-icon">
+              <svg class="akked-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </span>
+            <span data-i18n="voiceAssistant">المساعد الصوتي الذكي</span>
+          </button>
+
+          <!-- Theme Switcher in drawer -->
+          <button type="button" class="sidebar-util-btn" onclick="AkkedApp.toggleTheme();">
+            <span class="nav-icon">
+              <svg class="akked-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+            </span>
+            <span data-i18n="switchTheme">تبديل المظهر (فاتح / داكن)</span>
+          </button>
+        </div>
+
+        <!-- Signed-out Mobile Auth Links -->
+        <div class="sidebar-mobile-auth" id="sidebar-mobile-auth" style="display: none;">
+          <div class="nav-section-title" data-i18n="authSectionTitle">الحساب</div>
+          <a class="nav-item" onclick="AkkedApp.toggleMobileSidebar(); AkkedApp.navigate('login');">
+            <span class="nav-icon"><svg class="akked-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></span>
+            <span data-i18n="navLogin">تسجيل الدخول</span>
+          </a>
+          <a class="nav-item nav-item-primary" onclick="AkkedApp.toggleMobileSidebar(); AkkedApp.navigate('register');">
+            <span class="nav-icon"><svg class="akked-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></span>
+            <span data-i18n="navRegister">إنشاء حساب جديد</span>
+          </a>
+        </div>
 
         <!-- Platform Logout in Sidebar Navigation -->
         <div class="sidebar-logout-wrapper" id="sidebar-logout-wrapper">
@@ -254,24 +288,24 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Application Logic Scripts with Cache Busting -->
-  <script src="js/icons.js?v=20260903_v39"></script>
-  <script src="js/i18n.js?v=20260903_v39"></script>
-  <script src="js/crypto-utils.js?v=20260903_v39"></script>
-  <script src="js/sample-docs.js?v=20260903_v39"></script>
-  <script src="js/state.js?v=20260903_v39"></script>
-  <script src="js/redaction-engine.js?v=20260903_v39"></script>
-  <script src="js/components/voice-assistant.js?v=20260903_v39"></script>
-  <script src="js/components/landing.js?v=20260903_v39"></script>
-  <script src="js/components/login.js?v=20260903_v39"></script>
-  <script src="js/components/register.js?v=20260903_v39"></script>
-  <script src="js/components/dashboard.js?v=20260903_v39"></script>
-  <script src="js/components/shares.js?v=20260903_v39"></script>
-  <script src="js/components/wizard.js?v=20260903_v39"></script>
-  <script src="js/components/verify.js?v=20260903_v39"></script>
-  <script src="js/components/entities.js?v=20260903_v39"></script>
-  <script src="js/components/mydata.js?v=20260903_v39"></script>
-  <script src="js/components/alerts.js?v=20260903_v39"></script>
-  <script src="js/components/settings.js?v=20260903_v39"></script>
-  <script src="js/app.js?v=20260903_v39"></script>
+  <script src="js/icons.js?v=20260904_v40"></script>
+  <script src="js/i18n.js?v=20260904_v40"></script>
+  <script src="js/crypto-utils.js?v=20260904_v40"></script>
+  <script src="js/sample-docs.js?v=20260904_v40"></script>
+  <script src="js/state.js?v=20260904_v40"></script>
+  <script src="js/redaction-engine.js?v=20260904_v40"></script>
+  <script src="js/components/voice-assistant.js?v=20260904_v40"></script>
+  <script src="js/components/landing.js?v=20260904_v40"></script>
+  <script src="js/components/login.js?v=20260904_v40"></script>
+  <script src="js/components/register.js?v=20260904_v40"></script>
+  <script src="js/components/dashboard.js?v=20260904_v40"></script>
+  <script src="js/components/shares.js?v=20260904_v40"></script>
+  <script src="js/components/wizard.js?v=20260904_v40"></script>
+  <script src="js/components/verify.js?v=20260904_v40"></script>
+  <script src="js/components/entities.js?v=20260904_v40"></script>
+  <script src="js/components/mydata.js?v=20260904_v40"></script>
+  <script src="js/components/alerts.js?v=20260904_v40"></script>
+  <script src="js/components/settings.js?v=20260904_v40"></script>
+  <script src="js/app.js?v=20260904_v40"></script>
 </body>
 </html>

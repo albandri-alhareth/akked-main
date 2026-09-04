@@ -120,6 +120,11 @@ window.AkkedApp = {
     this.currentView = viewName;
     this.viewParams = params;
 
+    // Automatically close mobile navigation drawer on navigate
+    if (this.mobileSidebarOpen) {
+      this.toggleMobileSidebar();
+    }
+
     // Update location hash for browser history / bookmarking
     try {
       if (window.location.hash !== `#${viewName}`) {
@@ -275,6 +280,10 @@ window.AkkedApp = {
     const sidebarLogout = document.getElementById('sidebar-logout-wrapper');
     if (sidebarLogout) {
       sidebarLogout.style.display = this.isAuthenticated() ? 'block' : 'none';
+    }
+    const sidebarAuth = document.getElementById('sidebar-mobile-auth');
+    if (sidebarAuth) {
+      sidebarAuth.style.display = this.isAuthenticated() ? 'none' : 'flex';
     }
   },
 

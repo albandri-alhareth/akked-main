@@ -1709,7 +1709,8 @@
 
 @media (max-width: 768px) {
   .landing-nav-login-btn,
-  .landing-nav-register-btn {
+  .landing-nav-register-btn,
+  .landing-header-theme-btn {
     display: none !important;
   }
 

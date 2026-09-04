@@ -30,6 +30,8 @@ const translations = {
     navLogin: 'تسجيل الدخول',
     navRegister: 'إنشاء حساب جديد',
     navEnterPlatform: 'الدخول إلى المنصة',
+    quickActions: 'إجراءات سريعة',
+    authSectionTitle: 'الحساب',
 
     // Header & Global
     searchPlaceholder: 'بحث في المشاركات أو الجهات...',
@@ -473,6 +475,8 @@ const translations = {
     navLogin: 'Log in',
     navRegister: 'Create Account',
     navEnterPlatform: 'Enter Platform',
+    quickActions: 'Quick Actions',
+    authSectionTitle: 'Account',
 
     // Header & Global
     searchPlaceholder: 'Search shares, entities, or proofs...',

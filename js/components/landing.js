@@ -31,7 +31,7 @@ window.AkkedLanding = {
               </button>
 
               <!-- Theme Switcher -->
-              <button class="header-btn header-btn-icon" onclick="AkkedApp.toggleTheme()" title="${I18N.t('switchTheme')}" aria-label="${I18N.t('switchTheme')}">
+              <button class="header-btn header-btn-icon landing-header-theme-btn" onclick="AkkedApp.toggleTheme()" title="${I18N.t('switchTheme')}" aria-label="${I18N.t('switchTheme')}">
                 <svg class="akked-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
               </button>
 
@@ -95,6 +95,10 @@ window.AkkedLanding = {
                   <span id="mobile-menu-dash-text">${isAr ? 'لوحة التحكم' : 'Dashboard'}</span>
                 </a>
               `}
+              <button type="button" class="landing-mobile-nav-link" onclick="AkkedLanding.closeMobileMenu(); AkkedApp.toggleTheme();" style="width: 100%; border: 1px solid var(--border-light); cursor: pointer; text-align: start;">
+                <svg class="akked-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                <span id="mobile-menu-theme-text">${I18N.t('switchTheme')}</span>
+              </button>
             </nav>
           </div>
         </header>
@@ -490,6 +494,9 @@ window.AkkedLanding = {
 
     const mobRegText = document.getElementById('mobile-menu-register-text');
     if (mobRegText) mobRegText.textContent = isAr ? 'إنشاء حساب جديد' : 'Create Account';
+
+    const mobThemeText = document.getElementById('mobile-menu-theme-text');
+    if (mobThemeText) mobThemeText.textContent = I18N.t('switchTheme');
 
     // 3. Update Hero Section
     const heroTitle = document.querySelector('.landing-hero-title');
