@@ -194,22 +194,6 @@ window.AkkedLanding = {
 
         </main>
 
-        <!-- Public Landing Footer -->
-        <footer class="landing-footer">
-          <div class="landing-footer-container">
-            <div class="landing-footer-left">
-              <div>
-                <span style="font-weight: 800; color: var(--brand-primary); font-size: 1.05rem;">أكّد</span>
-                <span style="color: var(--text-muted); font-size: 0.85rem; margin-inline-start: 8px;">— ${I18N.t('landingFooterTagline')}</span>
-              </div>
-            </div>
-
-            <div class="landing-footer-center">
-              <span>${I18N.t('landingFooterRights')}</span>
-            </div>
-          </div>
-        </footer>
-
       </div>
     `;
   },

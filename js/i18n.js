@@ -367,8 +367,11 @@ const translations = {
     // Landing Page - CTA Banner & Footer
     landingCtaTitle: 'ابدأ اليوم في حماية بياناتك ووثائقك الشخصية',
     landingCtaDesc: 'انضم لمنصة أكد وجرّب الإفصاح الانتقائي الذكي بنقرة واحدة.',
-    landingFooterRights: 'جميع الحقوق محفوظة لمنصة أكد © 2026',
-    landingFooterTagline: 'منصة أكّد لحماية البيانات الشخصية.',
+    footerBrandName: 'أكّد',
+    footerTagline: 'منصة لحماية البيانات الشخصية',
+    footerRights: 'جميع الحقوق محفوظة © 2026 منصة أكّد',
+    landingFooterTagline: 'منصة لحماية البيانات الشخصية',
+    landingFooterRights: 'جميع الحقوق محفوظة © 2026 منصة أكّد',
 
     // Toasts & Dialogs
     copiedToClipboard: 'تم نسخ الرابط إلى الحافظة بنجاح!',
@@ -813,8 +816,11 @@ const translations = {
     // Landing Page - CTA Banner & Footer
     landingCtaTitle: 'Take Sovereign Control Over Your Personal Documents Today',
     landingCtaDesc: 'Experience seamless, purpose-limited data sharing powered by Akked.',
-    landingFooterRights: 'All Rights Reserved. Akked Platform © 2026',
-    landingFooterTagline: 'Akked Privacy Platform.',
+    footerBrandName: 'Akked',
+    footerTagline: 'Personal Data Protection Platform',
+    footerRights: 'All Rights Reserved © 2026 Akked Platform',
+    landingFooterTagline: 'Personal Data Protection Platform',
+    landingFooterRights: 'All Rights Reserved © 2026 Akked Platform',
 
     // Toasts & Dialogs
     copiedToClipboard: 'Verification link copied to clipboard!',
