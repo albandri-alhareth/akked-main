@@ -1116,10 +1116,25 @@ textarea:focus-visible,
 
   /* Extra actions moved into mobile drawer on screens <= 768px */
   .header-end-actions .voice-mic-header-btn,
-  .header-end-actions .header-theme-btn,
   .header-end-actions .header-notif-btn,
   .header-end-actions .header-logout-btn {
     display: none !important;
+  }
+
+  /* Theme Switcher in main mobile header (directly beside hamburger button) */
+  .header-end-actions .header-theme-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    border-radius: var(--radius-md) !important;
   }
 
   /* Language Switcher in main mobile header */

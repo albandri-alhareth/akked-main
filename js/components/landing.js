@@ -27,7 +27,10 @@ window.AkkedLanding = {
               <!-- Language Switcher -->
               <button class="header-btn" id="landing-lang-btn" onclick="AkkedApp.toggleLanguage()" title="${isAr ? 'English' : 'العربية'}" aria-label="${isAr ? 'English' : 'العربية'}">
                 <svg class="akked-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                <span id="landing-lang-btn-text">${isAr ? 'English' : 'العربية'}</span>
+                <span id="landing-lang-btn-text">
+                  <span class="lang-text-full">${isAr ? 'English' : 'العربية'}</span>
+                  <span class="lang-text-compact">${isAr ? 'EN' : 'عربي'}</span>
+                </span>
               </button>
 
               <!-- Theme Switcher -->
@@ -95,10 +98,6 @@ window.AkkedLanding = {
                   <span id="mobile-menu-dash-text">${isAr ? 'لوحة التحكم' : 'Dashboard'}</span>
                 </a>
               `}
-              <button type="button" class="landing-mobile-nav-link" onclick="AkkedLanding.closeMobileMenu(); AkkedApp.toggleTheme();" style="width: 100%; border: 1px solid var(--border-light); cursor: pointer; text-align: start;">
-                <svg class="akked-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
-                <span id="mobile-menu-theme-text">${I18N.t('switchTheme')}</span>
-              </button>
             </nav>
           </div>
         </header>
@@ -159,6 +158,7 @@ window.AkkedLanding = {
                   aria-label="${isAr ? 'تشغيل الفيديو التعريفي لمنصة أكّد' : 'Play Akked Explainer Video'}">
                   <source src="assets/WhatsApp%20Video%202026-09-03%20at%2011.46.38%20PM.mp4" type="video/mp4">
                   <source src="assets/WhatsApp Video 2026-09-03 at 11.46.38 PM.mp4" type="video/mp4">
+                  <track id="video-en-subtitles" kind="subtitles" srclang="en" label="English" src="assets/subtitles-en.vtt"${!isAr ? ' default' : ''}>
                   <p style="padding: 24px; text-align: center; color: var(--text-muted);">
                     ${isAr ? 'متصفحك لا يدعم تشغيل الفيديو المباشر.' : 'Your browser does not support HTML5 video.'}
                   </p>
@@ -428,6 +428,45 @@ window.AkkedLanding = {
       });
       this._langListenerAttached = true;
     }
+
+    // Initialize video subtitles matching current language
+    const initialLang = (typeof I18N !== 'undefined' && I18N.currentLang) ? I18N.currentLang : 'ar';
+    this.syncVideoSubtitles(initialLang);
+  },
+
+  syncVideoSubtitles(lang) {
+    const isEn = lang === 'en';
+    const videoEl = document.getElementById('akked-main-explainer-video');
+    if (!videoEl) return;
+
+    const applyTrackMode = () => {
+      if (videoEl.textTracks && videoEl.textTracks.length > 0) {
+        for (let i = 0; i < videoEl.textTracks.length; i++) {
+          const track = videoEl.textTracks[i];
+          if (track.language === 'en' || track.label === 'English') {
+            track.mode = isEn ? 'showing' : 'hidden';
+          } else {
+            track.mode = 'hidden';
+          }
+        }
+      }
+    };
+
+    applyTrackMode();
+
+    const trackEl = document.getElementById('video-en-subtitles');
+    if (trackEl) {
+      trackEl.removeEventListener('load', applyTrackMode);
+      trackEl.addEventListener('load', applyTrackMode, { once: true });
+    }
+
+    if (!videoEl._subtitlesInitialized) {
+      videoEl.addEventListener('play', () => {
+        const currentLang = typeof I18N !== 'undefined' && I18N.currentLang ? I18N.currentLang : 'ar';
+        this.syncVideoSubtitles(currentLang);
+      });
+      videoEl._subtitlesInitialized = true;
+    }
   },
 
   updateHowItWorksLanguage(lang) {
@@ -447,7 +486,10 @@ window.AkkedLanding = {
     // 2. Update Header Language Button & Auth Actions
     const langBtnText = document.getElementById('landing-lang-btn-text');
     if (langBtnText) {
-      langBtnText.textContent = isAr ? 'English' : 'العربية';
+      langBtnText.innerHTML = `
+        <span class="lang-text-full">${isAr ? 'English' : 'العربية'}</span>
+        <span class="lang-text-compact">${isAr ? 'EN' : 'عربي'}</span>
+      `;
     }
     const langBtn = document.getElementById('landing-lang-btn');
     if (langBtn) {
@@ -478,9 +520,6 @@ window.AkkedLanding = {
 
     const mobRegText = document.getElementById('mobile-menu-register-text');
     if (mobRegText) mobRegText.textContent = isAr ? 'إنشاء حساب جديد' : 'Create Account';
-
-    const mobThemeText = document.getElementById('mobile-menu-theme-text');
-    if (mobThemeText) mobThemeText.textContent = I18N.t('switchTheme');
 
     // 3. Update Hero Section
     const heroTitle = document.querySelector('.landing-hero-title');
@@ -530,6 +569,7 @@ window.AkkedLanding = {
     const videoEl = document.getElementById('akked-main-explainer-video');
     if (videoEl) {
       videoEl.setAttribute('aria-label', isAr ? 'تشغيل الفيديو التعريفي لمنصة أكّد' : 'Play Akked Explainer Video');
+      this.syncVideoSubtitles(lang);
     }
 
     // 6. Update How Akked Works Section
